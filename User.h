@@ -13,6 +13,7 @@
     
 }
 
+
 @property (assign, nonatomic) int SchID;
 @property (assign, nonatomic) int UserID;
 @property (assign, nonatomic) NSString *UserName;
