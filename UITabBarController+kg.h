@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  UITabBarController+kg.h
 //  DanceWorks Mobile
 //
 //  Created by Akada Software on 10/10/14.
@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Account.h"
 
-@interface FirstViewController : UIViewController
-
-
+@interface UITabBarController (kg)
 
 @end
-
