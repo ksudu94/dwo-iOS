@@ -8,6 +8,7 @@
 
 #import "Globals.h"
 
+
 @implementation Globals
 
 - (NSDate*) getDateFromJSON:(NSString *)dateString
@@ -22,5 +23,21 @@
     return [NSDate dateWithTimeIntervalSince1970:interval];
 }
 
+-(NSMutableString *) buildURL:(NSMutableString *) methodName fromDictionary:(NSMutableDictionary *) dictionary
+{
+    NSMutableString * jsonURL = [[NSMutableString alloc] init];
+    [jsonURL setString:@"http://app.akadasoftware.com/ws/Service1.svc/"];
+
+    [jsonURL appendString: methodName];
+    for(id key in dictionary)
+    {
+        [jsonURL appendString:key];
+        [jsonURL appendString:@"="];
+        [jsonURL appendString:[dictionary objectForKey:key]];
+        [jsonURL appendString:@"&"];
+    }
+    [jsonURL deleteCharactersInRange:NSMakeRange([jsonURL length]-1, 1)];
+    return jsonURL;
+}
 
 @end

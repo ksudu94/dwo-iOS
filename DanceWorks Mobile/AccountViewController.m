@@ -8,8 +8,12 @@
 
 #import "AccountViewController.h"
 #import "AFNetworking.h"
+#import "LoginController.h"
 #import "Account.h"
 #import "Globals.h"
+#import "User.h"
+#import "School.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 
 
 @interface AccountViewController() {
@@ -18,8 +22,12 @@
     NSDateFormatter *dateFormatter;
     Account *acc;
     Globals *oGlobal;
+
     
 }
+
+@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) School *school;
 
 @property(strong) NSDictionary *data;
 
@@ -27,13 +35,19 @@
 
 @implementation AccountViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSURL *myURL = [NSURL URLWithString:@"http://app.akadasoftware.com/ws/Service1.svc/getAccountsJS?Order=%20&SchID=11&UserID=575&UserGUID=24b933dc-dbe8-464e-ac93-1e7cfa0db5a4"];
-    
-    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
+    //Declare button
+    self.rightBarButton = [[UIBarButtonItem alloc] init];
+    self.rightBarButton.title = @"Logout";
+    self.rightBarButton.target = self;
+    self.rightBarButton.action = @selector(LogOut:);
+    [self.navigationController popViewControllerAnimated:YES];
+
+
+    self.navigationItem.rightBarButtonItem = self.rightBarButton;
     
     //A delegate allows one object to send data to another when an event happens
     self.tableView.delegate = self;
@@ -41,6 +55,33 @@
     
     dateFormatter = [[NSDateFormatter alloc] init];
     oGlobal = [[Globals alloc] init];
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Objects stored as Json string dictionaries...
+    NSMutableDictionary *dictUser = [defaults rm_customObjectForKey:@"SavedUser"];
+    NSMutableDictionary *dictSchool = [defaults rm_customObjectForKey:@"SavedSchool"];
+
+
+    NSError *e = nil;
+    self.user = [[User alloc] initWithDictionary:dictUser error:&e];
+    self.school = [[School alloc] initWithDictionary:dictSchool error:&e];
+
+
+    NSMutableDictionary *params = [NSMutableDictionary new];
+
+    [params setObject:@"%20" forKey:@"Order"];
+    [params setObject:[NSString stringWithFormat:@"%d", self.user.UserID]  forKey:@"UserID"];
+    [params setObject:[NSString stringWithFormat:@"%d", self.user.SchID]  forKey:@"SchID"];
+    [params setObject:self.user.UserGUID forKey:@"UserGUID"];
+
+    NSMutableString *method = [[NSMutableString alloc] init];
+    [method setString:@"getAccountsJS?"];
+    
+    NSURL *myURL =  [NSURL URLWithString:[oGlobal buildURL:method fromDictionary:params]];
+    
+    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
+
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:myRequest];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -53,6 +94,8 @@
         self.data = (NSDictionary *) responseObject;
         [self saveAccounts];
         [self.tableView reloadData];
+        [defaults rm_setCustomObject:responseObject forKey:@"SavedAccounts"];
+
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -71,6 +114,17 @@
     // 5
     [operation start];
 
+}
+
+- (void) LogOut: (id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"UserID"];
+    [defaults synchronize];
+    //[defaults setInteger:UserID forKey:@"UserID"];
+    [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
+
+    NSLog( @"Button clicked." );
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,14 +150,10 @@
     NSString *id = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:id forIndexPath:indexPath];
     
-    //Method is hit everytime a cell is created so create a new account object from the accounts array based on the cell position
     Account *newAccount = [accountsObjects objectAtIndex: indexPath.row];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
     NSString *name = [newAccount.FName stringByAppendingString: newAccount.LName];
-    //NSDate *date = newAccount.DateReg;
-    //NSString *strDate = [dateFormatter stringFromDate: date];
-    //int *acctid = newAccount.AcctID ;
     
     cell.textLabel.text = name;
     return cell;
@@ -125,18 +175,16 @@
             //The DateReg value needs to be converted to readable format so that when you save it. It's not nill
             acc.DateReg = [oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];
            
-            //Add the newly created account to an array of account objects
             [accountsObjects addObject:acc];
-            //NSLog(@"First Name: %@", [dictionary objectForKey:@"FName"]);
-            //NSLog(@"Last Name: %@", [dictionary objectForKey:@"LName"]);
-            //NSLog(@"AcctID: %@", [dictionary objectForKey:@"AcctID"]);
-            NSLog(@"Date: %@", [acc getDateFromJSON:[dictionary objectForKey:@"DateReg"]]);
+
             
             
         }
     }
     
 }
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

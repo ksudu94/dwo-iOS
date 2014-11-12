@@ -7,15 +7,13 @@
 //
 
 #import "JSONModel.h"
+#import "NSObject+RMArchivable.h"
+#import "RMMapper.h"
 
-@interface User : JSONModel
-{
+@interface User : JSONModel <RMMapping>
     
-}
-
-
-@property (assign, nonatomic) int SchID;
-@property (assign, nonatomic) int UserID;
+@property (assign, nonatomic) NSInteger SchID;
+@property (assign, nonatomic) NSInteger UserID;
 @property (assign, nonatomic) NSString *UserName;
 @property (assign, nonatomic) NSString *EMailAddr;
 @property (assign, nonatomic) BOOL Admin;
@@ -23,37 +21,37 @@
 @property (assign, nonatomic) BOOL ProcReg;
 @property (assign, nonatomic) NSString *DisplayName;
 @property (assign, nonatomic) BOOL TransTypeOptions;
-@property (assign, nonatomic) int TransType;
-@property (assign, nonatomic) int TransPaymentKind;
-@property (assign, nonatomic) int TransChargeKind;
+@property (assign, nonatomic) NSInteger TransType;
+@property (assign, nonatomic) NSInteger TransPaymentKind;
+@property (assign, nonatomic) NSInteger TransChargeKind;
 @property (assign, nonatomic) BOOL TransDateOptions;
 @property () NSDate *TransStartDate;
 @property () NSDate *TransEndDate;
-@property (assign, nonatomic) int TransDeleted;
+@property (assign, nonatomic) NSInteger TransDeleted;
 @property (assign, nonatomic) BOOL StudentOptions;
-@property (assign, nonatomic) int StudentSort;
-@property (assign, nonatomic) int StudentSelection;
-@property (assign, nonatomic) int StudentsShown;
-@property (assign, nonatomic) int StudentGroupCode;
+@property (assign, nonatomic) NSInteger StudentSort;
+@property (assign, nonatomic) NSInteger StudentSelection;
+@property (assign, nonatomic) NSInteger StudentsShown;
+@property (assign, nonatomic) NSInteger StudentGroupCode;
 @property (assign, nonatomic) BOOL AccountOptions;
-@property (assign, nonatomic) int AccountSort;
-@property (assign, nonatomic) int AccountSelection;
-@property (assign, nonatomic) int AccountsShown;
-@property (assign, nonatomic) int AccountGroupCode;
+@property (assign, nonatomic) NSInteger AccountSort;
+@property (assign, nonatomic) NSInteger AccountSelection;
+@property (assign, nonatomic) NSInteger AccountsShown;
+@property (assign, nonatomic) NSInteger AccountGroupCode;
 @property (assign, nonatomic) BOOL ClassOptions;
-@property (assign, nonatomic) int ClassSort;
-@property (assign, nonatomic) int ClassesShown;
+@property (assign, nonatomic) NSInteger ClassSort;
+@property (assign, nonatomic) NSInteger ClassesShown;
 @property (assign, nonatomic) BOOL StaffOptions;
-@property (assign, nonatomic) int StaffSort;
-@property (assign, nonatomic) int StaffShown;
+@property (assign, nonatomic) NSInteger StaffSort;
+@property (assign, nonatomic) NSInteger StaffShown;
 @property (assign, nonatomic) BOOL ShowNotes;
 @property (assign, nonatomic) BOOL ShowTransactions;
 @property (assign, nonatomic) BOOL ShowRegistrations;
-@property (assign, nonatomic) int AccountListSize;
-@property (assign, nonatomic) int StudentListSize;
-@property (assign, nonatomic) int ClassListSize;
-@property (assign, nonatomic) int StaffListSize;
+@property (assign, nonatomic) NSInteger AccountListSize;
+@property (assign, nonatomic) NSInteger StudentListSize;
+@property (assign, nonatomic) NSInteger ClassListSize;
+@property (assign, nonatomic) NSInteger StaffListSize;
 @property (assign, nonatomic) NSString *UserGUID;
-@property (assign, nonatomic) int StaffID;
+@property (assign, nonatomic) NSInteger StaffID;
 
 @end

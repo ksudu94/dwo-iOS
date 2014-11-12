@@ -15,6 +15,9 @@
 }
 
 - (IBAction)btnLogin:(id)sender;
+@property (strong, nonatomic) IBOutlet UISwitch *switchRememberMe;
+@property (strong, nonatomic) IBOutlet UITextField *txtEmail;
+@property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 
 @end
 
@@ -22,6 +25,8 @@
             
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -31,6 +36,9 @@
 }
 
 - (IBAction)btnLogin:(id)sender {
+    
+    BOOL rememberMe = [_switchRememberMe  isOn];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSURL *myURL = [NSURL URLWithString:@"http://app.akadasoftware.com/ws/Service1.svc/getUser?email=kyle@akadasoftware.com&password=akada"];
     
@@ -47,6 +55,18 @@
         user = [[User alloc] initWithDictionary:responseObject error:&e];
         //NSLog(@"Error: %@", e);
         NSLog(@"Name: %@", user.UserName);
+        int UserID = user.UserID;
+        if(rememberMe)
+        {
+            [defaults setInteger:UserID forKey:@"UserID"];
+
+        }
+        else
+        {
+            [defaults setInteger:0 forKey:@"UserID"];
+
+        }
+
         [self performSegueWithIdentifier:@"AccountSegue" sender:self];
 
    
@@ -70,5 +90,10 @@
     // 5
     [operation start];
 
+}
+
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
 }
 @end

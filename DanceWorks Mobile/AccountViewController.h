@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface AccountViewController : UITableViewController
+{
+}
+
+@property (nonatomic, retain) UIBarButtonItem *rightBarButton;
+-(void)LogOut: (id)sender;
 
 @end

@@ -13,4 +13,6 @@
 
 - (NSDate*) getDateFromJSON:(NSString *)dateString;
 
+-(NSMutableString *) buildURL:(NSMutableString *) methodName fromDictionary:(NSMutableDictionary *) dictionary;
+
 @end
