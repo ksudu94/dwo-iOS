@@ -1,29 +1,27 @@
 //
-//  AccountViewController.m
+//  StudentViewController.m
 //  DanceWorks Mobile
 //
-//  Created by Akada Software on 10/15/14.
+//  Created by Akada Software on 12/1/14.
 //  Copyright (c) 2014 Akada Software. All rights reserved.
 //
 
-#import "AccountViewController.h"
-#import "AccountInformation.h"
+#import "StudentViewController.h"
 #import "AFNetworking.h"
 #import "LoginController.h"
-#import "Account.h"
+#import "Student.h"
 #import "Globals.h"
 #import "User.h"
 #import "School.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
 
-
-@interface AccountViewController() {
-    NSMutableArray *accountsObjects;
+@interface StudentViewController() {
+    NSMutableArray *studentsObjects;
     NSMutableData *_receivedData;
     NSDateFormatter *dateFormatter;
-    Account *acc;
+    Student *student;
     Globals *oGlobal;
-
+    
     
 }
 
@@ -34,21 +32,15 @@
 
 @end
 
-@implementation AccountViewController
+
+@implementation StudentViewController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Declare button
-    self.rightBarButton = [[UIBarButtonItem alloc] init];
-    self.rightBarButton.title = @"Logout";
-    self.rightBarButton.target = self;
-    self.rightBarButton.action = @selector(LogOut:);
     [self.navigationController popViewControllerAnimated:YES];
-
-
-    self.navigationItem.rightBarButtonItem = self.rightBarButton;
+    
+    
     
     //A delegate allows one object to send data to another when an event happens
     self.tableView.delegate = self;
@@ -59,30 +51,31 @@
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
-    //Objects stored as Json string dictionaries...
+    //Pull stored objects from NSUserDefaults as dictionaries
     NSMutableDictionary *dictUser = [defaults rm_customObjectForKey:@"SavedUser"];
     NSMutableDictionary *dictSchool = [defaults rm_customObjectForKey:@"SavedSchool"];
-
-
+    
+    
     NSError *e = nil;
     self.user = [[User alloc] initWithDictionary:dictUser error:&e];
     self.school = [[School alloc] initWithDictionary:dictSchool error:&e];
-
-
+    
+    
     NSMutableDictionary *params = [NSMutableDictionary new];
-
-    [params setObject:@"%20" forKey:@"Order"];
+    
+    [params setObject:@" Where schid=11" forKey:@"Where"];
     [params setObject:[NSString stringWithFormat:@"%d", self.user.UserID]  forKey:@"UserID"];
-    [params setObject:[NSString stringWithFormat:@"%d", self.user.SchID]  forKey:@"SchID"];
     [params setObject:self.user.UserGUID forKey:@"UserGUID"];
-
-    NSMutableString *method = [[NSMutableString alloc] init];
-    [method setString:@"getAccountsJS?"];
     
-    NSURL *myURL =  [NSURL URLWithString:[oGlobal buildURL:method fromDictionary:params]];
+    NSMutableString *studentMethod = [[NSMutableString alloc] init];
+    [studentMethod setString:@"getStudents?"];
     
-    NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
-
+    NSString * url = [oGlobal buildURL:studentMethod fromDictionary:params];
+    
+    NSURL *studentURL =  [NSURL URLWithString:[oGlobal URLEncodeString:url]];
+    
+    NSURLRequest *myRequest = [NSURLRequest requestWithURL:studentURL];
+    
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:myRequest];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -93,10 +86,9 @@
         
         // 3
         self.data = (NSDictionary *) responseObject;
-        [self saveAccounts];
+        [self saveStudents];
         [self.tableView reloadData];
-        [defaults rm_setCustomObject:responseObject forKey:@"SavedAccounts"];
-
+        [defaults rm_setCustomObject:responseObject forKey:@"SavedStudents"];
         
         
         
@@ -105,7 +97,7 @@
         NSLog(@"Error: %@", error);
         
         // 4
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Students"
                                                             message:[error localizedDescription]
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
@@ -115,7 +107,7 @@
     
     // 5
     [operation start];
-
+    
 }
 
 - (void) LogOut: (id)sender
@@ -125,10 +117,9 @@
     [defaults synchronize];
     //[defaults setInteger:UserID forKey:@"UserID"];
     [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
-
+    
     NSLog( @"Button clicked." );
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -144,7 +135,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self->accountsObjects.count;
+    return self->studentsObjects.count;
 }
 
 
@@ -153,38 +144,33 @@
     NSString *id = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:id forIndexPath:indexPath];
     
-    Account *newAccount = [accountsObjects objectAtIndex: indexPath.row];
+    Student *newStudent = [studentsObjects objectAtIndex: indexPath.row];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
-    NSString *name = [newAccount.FName stringByAppendingString: newAccount.LName];
+    NSString *name = [newStudent.FName stringByAppendingString: newStudent.LName];
     
     cell.textLabel.text = name;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.selectedAccount = [accountsObjects objectAtIndex: indexPath.row];
-    NSLog(_selectedAccount.FName);
-   
-}
--(void) saveAccounts {
+-(void) saveStudents {
     //triggered when all data is loaded
     NSError *e = nil;
-    accountsObjects = [[NSMutableArray alloc] init];
+    studentsObjects = [[NSMutableArray alloc] init];
+    
     if (e){
         NSLog(@"JSONObjectWithData error: %@", e);
     } else {
         for (NSDictionary *dictionary in self.data)
         {
             //Create account for every response
-            acc = [[Account alloc] initWithDictionary:dictionary error:&e];
+            student = [[Student alloc] initWithDictionary:dictionary error:&e];
             
             //The DateReg value needs to be converted to readable format so that when you save it. It's not nill
-            acc.DateReg = [oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];
-           
-            [accountsObjects addObject:acc];
-
+            //student.DateReg = [oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];
+            
+            [studentsObjects addObject:student];
+            
             
             
         }
@@ -194,47 +180,47 @@
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

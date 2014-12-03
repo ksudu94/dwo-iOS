@@ -15,4 +15,6 @@
 
 -(NSMutableString *) buildURL:(NSMutableString *) methodName fromDictionary:(NSMutableDictionary *) dictionary;
 
+-(NSString *) URLEncodeString:(NSString *) str;
+
 @end

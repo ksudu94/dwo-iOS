@@ -40,4 +40,15 @@
     return jsonURL;
 }
 
+//For urls with special characters. 
+-(NSString *) URLEncodeString:(NSString *) str
+{
+    
+    NSMutableString *tempStr = [NSMutableString stringWithString:str];
+    [tempStr replaceOccurrencesOfString:@" " withString:@"+" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [tempStr length])];
+    
+    
+    return [[NSString stringWithFormat:@"%@",tempStr] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
 @end

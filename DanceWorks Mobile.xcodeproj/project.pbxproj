@@ -14,6 +14,8 @@
 		561AAD391A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD341A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m */; };
 		561AAD3A1A0AC5C200269F18 /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD361A0AC5C200269F18 /* RMMapper.m */; };
 		561AAD401A0D640B00269F18 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD3F1A0D640B00269F18 /* School.m */; };
+		56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F6E1A2D05B700F7074C /* StudentViewController.m */; };
+		56345F721A2D292700F7074C /* AccountInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F711A2D292700F7074C /* AccountInformation.m */; };
 		5666560219E863A300FEA09E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666560119E863A300FEA09E /* main.m */; };
 		5666560519E863A400FEA09E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666560419E863A400FEA09E /* AppDelegate.m */; };
 		5666561019E863A400FEA09E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5666560F19E863A400FEA09E /* Images.xcassets */; };
@@ -75,6 +77,10 @@
 		561AAD361A0AC5C200269F18 /* RMMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapper.m; sourceTree = "<group>"; };
 		561AAD3E1A0D640B00269F18 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
 		561AAD3F1A0D640B00269F18 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
+		56345F6D1A2D05B700F7074C /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
+		56345F6E1A2D05B700F7074C /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
+		56345F701A2D292700F7074C /* AccountInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformation.h; sourceTree = "<group>"; };
+		56345F711A2D292700F7074C /* AccountInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformation.m; sourceTree = "<group>"; };
 		566655FC19E863A300FEA09E /* DanceWorks Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DanceWorks Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5666560019E863A300FEA09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5666560119E863A300FEA09E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,6 +211,10 @@
 				56EB74C219FED15A007C5E22 /* LoginController.m */,
 				56EB7F7919EF1496005CABF6 /* AccountViewController.h */,
 				56EB7F7A19EF1496005CABF6 /* AccountViewController.m */,
+				56345F6D1A2D05B700F7074C /* StudentViewController.h */,
+				56345F6E1A2D05B700F7074C /* StudentViewController.m */,
+				56345F701A2D292700F7074C /* AccountInformation.h */,
+				56345F711A2D292700F7074C /* AccountInformation.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -483,6 +493,7 @@
 			files = (
 				56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */,
 				5684338919EF1D0600A28B52 /* Globals.m in Sources */,
+				56345F721A2D292700F7074C /* AccountInformation.m in Sources */,
 				56EB7F7E19EF18F9005CABF6 /* User.m in Sources */,
 				561AAD391A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				5666566619E8641800FEA09E /* JSONModelError.m in Sources */,
@@ -500,6 +511,7 @@
 				5666568A19E874AF00FEA09E /* AFURLRequestSerialization.m in Sources */,
 				5666568919E874AF00FEA09E /* AFURLConnectionOperation.m in Sources */,
 				5666568C19E874AF00FEA09E /* AFURLSessionManager.m in Sources */,
+				56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */,
 				5666560519E863A400FEA09E /* AppDelegate.m in Sources */,
 				5666566B19E8641800FEA09E /* JSONKeyMapper.m in Sources */,
 				5666566419E8641800FEA09E /* JSONModelArray.m in Sources */,
@@ -632,7 +644,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = NO;
 				INFOPLIST_FILE = "DanceWorks Mobile/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -652,7 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEPLOYMENT_LOCATION = NO;
 				INFOPLIST_FILE = "DanceWorks Mobile/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

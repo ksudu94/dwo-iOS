@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Account.h"
 
 @interface AccountViewController : UITableViewController
-{
-}
 
+@property (atomic, retain) Account *selectedAccount;
 @property (nonatomic, retain) UIBarButtonItem *rightBarButton;
--(void)LogOut: (id)sender;
 
+-(void)LogOut: (id)sender;
 @end
