@@ -7,6 +7,7 @@
 //
 
 #import "StudentViewController.h"
+#import "StudentInformation.h"
 #import "AFNetworking.h"
 #import "LoginController.h"
 #import "Student.h"
@@ -141,16 +142,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *id = @"Cell";
+    NSString *id = @"StudentCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:id forIndexPath:indexPath];
     
     Student *newStudent = [studentsObjects objectAtIndex: indexPath.row];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
-    NSString *name = [newStudent.FName stringByAppendingString: newStudent.LName];
-    
-    cell.textLabel.text = name;
+    NSString *fullName=[NSString stringWithFormat:@"%@%@%@",newStudent.FName,@" ",newStudent.LName];
+
+    cell.textLabel.text = fullName;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    StudentInformation *studentInformation = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"StudentInformation"];
+    studentInformation.selectedStudent = [studentsObjects objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:studentInformation animated:NO];
 }
 
 -(void) saveStudents {

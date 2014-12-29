@@ -16,6 +16,16 @@
 		561AAD401A0D640B00269F18 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD3F1A0D640B00269F18 /* School.m */; };
 		56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F6E1A2D05B700F7074C /* StudentViewController.m */; };
 		56345F721A2D292700F7074C /* AccountInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F711A2D292700F7074C /* AccountInformation.m */; };
+		5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642E1821A3F345100DA2597 /* StudentInformation.m */; };
+		565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */; };
+		565A41BC1A51C23F00F193D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */; };
+		565A41BE1A51C24C00F193D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BD1A51C24C00F193D9 /* UIKit.framework */; };
+		565A41C01A51C25900F193D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BF1A51C25900F193D9 /* Foundation.framework */; };
+		565A41C31A51C32000F193D9 /* TWTMainViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 565A41BA1A51C1B400F193D9 /* TWTMainViewController.h */; };
+		565A41C41A51C32700F193D9 /* TWTMenuViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B91A51C1A800F193D9 /* TWTMenuViewController.h */; };
+		565A41C51A51C34700F193D9 /* TWTSideMenuViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B41A51BFD100F193D9 /* TWTSideMenuViewController.h */; };
+		565A41C71A51C35200F193D9 /* TWTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41C61A51C35200F193D9 /* TWTMainViewController.m */; };
+		565A41C91A51C35C00F193D9 /* TWTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41C81A51C35C00F193D9 /* TWTMenuViewController.m */; };
 		5666560219E863A300FEA09E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666560119E863A300FEA09E /* main.m */; };
 		5666560519E863A400FEA09E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666560419E863A400FEA09E /* AppDelegate.m */; };
 		5666561019E863A400FEA09E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5666560F19E863A400FEA09E /* Images.xcassets */; };
@@ -81,6 +91,17 @@
 		56345F6E1A2D05B700F7074C /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
 		56345F701A2D292700F7074C /* AccountInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformation.h; sourceTree = "<group>"; };
 		56345F711A2D292700F7074C /* AccountInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformation.m; sourceTree = "<group>"; };
+		5642E1811A3F345100DA2597 /* StudentInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentInformation.h; sourceTree = "<group>"; };
+		5642E1821A3F345100DA2597 /* StudentInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentInformation.m; sourceTree = "<group>"; };
+		565A41B41A51BFD100F193D9 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
+		565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
+		565A41B91A51C1A800F193D9 /* TWTMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTMenuViewController.h; sourceTree = "<group>"; };
+		565A41BA1A51C1B400F193D9 /* TWTMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTMainViewController.h; sourceTree = "<group>"; };
+		565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		565A41BD1A51C24C00F193D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		565A41BF1A51C25900F193D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		565A41C61A51C35200F193D9 /* TWTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTMainViewController.m; path = "../../../Downloads/TWTSideMenuViewController-master/TWTSideMenuViewController-Sample/TWTMainViewController.m"; sourceTree = "<group>"; };
+		565A41C81A51C35C00F193D9 /* TWTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTMenuViewController.m; path = "../../../Downloads/TWTSideMenuViewController-master/TWTSideMenuViewController-Sample/TWTMenuViewController.m"; sourceTree = "<group>"; };
 		566655FC19E863A300FEA09E /* DanceWorks Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DanceWorks Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5666560019E863A300FEA09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5666560119E863A300FEA09E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +175,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565A41C01A51C25900F193D9 /* Foundation.framework in Frameworks */,
+				565A41BE1A51C24C00F193D9 /* UIKit.framework in Frameworks */,
+				565A41BC1A51C23F00F193D9 /* CoreGraphics.framework in Frameworks */,
 				5666569119E8750A00FEA09E /* CFNetwork.framework in Frameworks */,
 				5666569219E8750A00FEA09E /* MobileCoreServices.framework in Frameworks */,
 				5666569319E8750A00FEA09E /* SystemConfiguration.framework in Frameworks */,
@@ -215,13 +239,31 @@
 				56345F6E1A2D05B700F7074C /* StudentViewController.m */,
 				56345F701A2D292700F7074C /* AccountInformation.h */,
 				56345F711A2D292700F7074C /* AccountInformation.m */,
+				5642E1811A3F345100DA2597 /* StudentInformation.h */,
+				5642E1821A3F345100DA2597 /* StudentInformation.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		565A41B31A51BFD100F193D9 /* TWTSideMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				565A41B41A51BFD100F193D9 /* TWTSideMenuViewController.h */,
+				565A41C61A51C35200F193D9 /* TWTMainViewController.m */,
+				565A41BA1A51C1B400F193D9 /* TWTMainViewController.h */,
+				565A41C81A51C35C00F193D9 /* TWTMenuViewController.m */,
+				565A41B91A51C1A800F193D9 /* TWTMenuViewController.h */,
+				565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */,
+			);
+			path = TWTSideMenuViewController;
 			sourceTree = "<group>";
 		};
 		566655F319E863A300FEA09E = {
 			isa = PBXGroup;
 			children = (
+				565A41BF1A51C25900F193D9 /* Foundation.framework */,
+				565A41BD1A51C24C00F193D9 /* UIKit.framework */,
+				565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */,
 				56EB7F6819EC84EA005CABF6 /* LaunchImage.png */,
 				5666568E19E8750A00FEA09E /* CFNetwork.framework */,
 				5666568F19E8750A00FEA09E /* MobileCoreServices.framework */,
@@ -232,6 +274,7 @@
 				561AAD3C1A0D631F00269F18 /* Models */,
 				5666561819E863A400FEA09E /* DanceWorks MobileTests */,
 				566655FD19E863A300FEA09E /* Products */,
+				565A41B31A51BFD100F193D9 /* TWTSideMenuViewController */,
 				561AAD2E1A0AC5C200269F18 /* RMMapper */,
 				5666564919E8641800FEA09E /* JSONModel */,
 			);
@@ -503,12 +546,18 @@
 				561AAD381A0AC5C200269F18 /* NSObject+RMCopyable.m in Sources */,
 				561AAD3A1A0AC5C200269F18 /* RMMapper.m in Sources */,
 				5666568619E874AF00FEA09E /* AFHTTPSessionManager.m in Sources */,
+				565A41C91A51C35C00F193D9 /* TWTMenuViewController.m in Sources */,
 				560C247D1A13F82900AAD013 /* Student.m in Sources */,
 				5666566F19E8740400FEA09E /* Account.m in Sources */,
 				5666568719E874AF00FEA09E /* AFNetworkReachabilityManager.m in Sources */,
 				561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */,
 				5666568419E874AF00FEA09E /* AFHTTPRequestOperation.m in Sources */,
 				5666568A19E874AF00FEA09E /* AFURLRequestSerialization.m in Sources */,
+				565A41C41A51C32700F193D9 /* TWTMenuViewController.h in Sources */,
+				565A41C71A51C35200F193D9 /* TWTMainViewController.m in Sources */,
+				565A41C51A51C34700F193D9 /* TWTSideMenuViewController.h in Sources */,
+				565A41C31A51C32000F193D9 /* TWTMainViewController.h in Sources */,
+				565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */,
 				5666568919E874AF00FEA09E /* AFURLConnectionOperation.m in Sources */,
 				5666568C19E874AF00FEA09E /* AFURLSessionManager.m in Sources */,
 				56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */,
@@ -520,6 +569,7 @@
 				5666566819E8641800FEA09E /* JSONAPI.m in Sources */,
 				56EB74C319FED15A007C5E22 /* LoginController.m in Sources */,
 				560C24831A13FC1100AAD013 /* Classes.m in Sources */,
+				5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */,
 				561AAD401A0D640B00269F18 /* School.m in Sources */,
 				5666566C19E8641800FEA09E /* JSONValueTransformer.m in Sources */,
 				5666568819E874AF00FEA09E /* AFSecurityPolicy.m in Sources */,
@@ -652,6 +702,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
@@ -672,6 +723,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

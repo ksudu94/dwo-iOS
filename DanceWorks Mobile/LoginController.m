@@ -7,11 +7,15 @@
 //
 
 #import "LoginController.h"
+#import "AppDelegate.h"
 #import "AFNetworking.h"
 #import "User.h"
 #import "School.h"
 #import "Globals.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
+#import "TWTSideMenuViewController.h"
+#import "TWTMenuViewController.h"
+#import "TWTMainViewController.h"
 
 @interface LoginController (){
     Globals *oGlobal;
@@ -26,6 +30,9 @@
 @property (nonatomic, strong) NSMutableArray *UserArray;
 @property (nonatomic, strong) NSMutableArray *SchoolArray;
 
+@property (nonatomic, strong) TWTSideMenuViewController *sideMenuViewController;
+@property (nonatomic, strong) TWTMenuViewController *menuViewController;
+@property (nonatomic, strong) TWTMainViewController *mainViewController;
 
 @end
 
@@ -101,14 +108,14 @@
                     
                 }
 
-                [method setString:@"getSchool?"];
                 
                 NSMutableDictionary *schoolParams = [NSMutableDictionary new];
                 
                 [schoolParams setObject:[NSString stringWithFormat:@"%d", self.user.SchID] forKey:@"SchID"];
                 [schoolParams setObject:[NSString stringWithFormat:@"%d", UserID]  forKey:@"UserID"];
                 [schoolParams setObject:self.user.UserGUID forKey:@"UserGUID"];
-
+                
+                [method setString:@"getSchool?"];
 
                 NSURL *mySchoolURL =  [NSURL URLWithString:[oGlobal buildURL:method fromDictionary:schoolParams]];
                 
@@ -138,7 +145,7 @@
                     NSLog(@"Error: %@", error);
                     
                     // 4
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Service unavailable, please try again later."
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error retrieving School, please try again later."
                                                                         message:[error localizedDescription]
                                                                        delegate:nil
                                                               cancelButtonTitle:@"Ok"
@@ -147,8 +154,21 @@
                 }];
                 
                 [getSchool start];
+                
+                AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
+                appDelegateTemp.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+                self.menuViewController = [[TWTMenuViewController alloc] initWithNibName:nil bundle:nil];
+                
+                self.sideMenuViewController = [[TWTSideMenuViewController alloc] initWithMenuViewController:self.menuViewController mainViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController]];
+                
+                self.sideMenuViewController.shadowColor = [UIColor blackColor];
+                self.sideMenuViewController.edgeOffset = (UIOffset) { .horizontal = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 18.0f : 0.0f };
+                self.sideMenuViewController.zoomScale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 0.5634f : 0.85f;
+                self.sideMenuViewController.delegate = self;
+                appDelegateTemp.window.rootViewController = self.sideMenuViewController;
+                
 
-                [self performSegueWithIdentifier:@"AccountSegue" sender:self];
+                
 
             }
           
@@ -170,6 +190,8 @@
         
         // 5
         [operation start];
+    
+    
   
 }
 

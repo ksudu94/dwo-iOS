@@ -13,6 +13,7 @@
 
 @property (atomic, retain) Account *selectedAccount;
 @property (nonatomic, retain) UIBarButtonItem *rightBarButton;
+@property (nonatomic, retain) UIBarButtonItem *leftBarButton;
 
 -(void)LogOut: (id)sender;
 @end

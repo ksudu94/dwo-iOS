@@ -7,8 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "TWTMenuViewController.h"
+#import "TWTMainViewController.h"
+#import "TWTSideMenuViewController.h"
 
 @interface AppDelegate ()
+@property (nonatomic, strong) TWTSideMenuViewController *sideMenuViewController;
+@property (nonatomic, strong) TWTMenuViewController *menuViewController;
+@property (nonatomic, strong) TWTMainViewController *mainViewController;
 
 @end
 
@@ -17,6 +23,37 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.menuViewController = [[TWTMenuViewController alloc] initWithNibName:nil bundle:nil];
+    self.mainViewController = [[TWTMainViewController alloc] initWithNibName:nil bundle:nil];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int UserID = [defaults integerForKey:@"UserID"];
+    if(UserID > 0)
+    {
+        self.sideMenuViewController = [[TWTSideMenuViewController alloc] initWithMenuViewController:self.menuViewController mainViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController]];
+        
+        self.sideMenuViewController.shadowColor = [UIColor blackColor];
+        self.sideMenuViewController.edgeOffset = (UIOffset) { .horizontal = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 18.0f : 0.0f };
+        self.sideMenuViewController.zoomScale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 0.5634f : 0.85f;
+        self.sideMenuViewController.delegate = self;
+        self.window.rootViewController = self.sideMenuViewController;
+        
+        
+        //self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+
+        
+    }
+    else
+    {
+        UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginController"];
+        UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+        self.window.rootViewController = navigation;
+         
+               
+    }
+    
+    // Do any additional setup after loading the view, typically from a nib.
     return YES;
 }
 

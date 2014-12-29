@@ -10,8 +10,6 @@
 #import "Account.h"
 @interface AccountInformation : UIViewController
 
-@property (atomic, retain) Account *newAccount;
-
--(void)getAccount: (id)sender;
+@property (atomic, retain) Account *selectedAccount;
 
 @end
