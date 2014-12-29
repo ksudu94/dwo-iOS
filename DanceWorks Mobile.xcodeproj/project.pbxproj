@@ -55,6 +55,7 @@
 		5666569319E8750A00FEA09E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666569019E8750A00FEA09E /* SystemConfiguration.framework */; };
 		5684338919EF1D0600A28B52 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684338819EF1D0600A28B52 /* Globals.m */; };
 		5684338F19F59C9800A28B52 /* IsLoggedIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684338E19F59C9800A28B52 /* IsLoggedIn.m */; };
+		56CF6CD41A52030E003772DD /* galaxy.png in Resources */ = {isa = PBXBuildFile; fileRef = 56CF6CD31A52030E003772DD /* galaxy.png */; };
 		56EB74C319FED15A007C5E22 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB74C219FED15A007C5E22 /* LoginController.m */; };
 		56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EB7F6819EC84EA005CABF6 /* LaunchImage.png */; };
 		56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB7F7A19EF1496005CABF6 /* AccountViewController.m */; };
@@ -160,6 +161,7 @@
 		5684338819EF1D0600A28B52 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		5684338D19F59C9800A28B52 /* IsLoggedIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IsLoggedIn.h; path = ../IsLoggedIn.h; sourceTree = "<group>"; };
 		5684338E19F59C9800A28B52 /* IsLoggedIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IsLoggedIn.m; path = ../IsLoggedIn.m; sourceTree = "<group>"; };
+		56CF6CD31A52030E003772DD /* galaxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxy.png; sourceTree = "<group>"; };
 		56EB74C119FED15A007C5E22 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = "DanceWorks Mobile/LoginController.h"; sourceTree = "<group>"; };
 		56EB74C219FED15A007C5E22 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = "DanceWorks Mobile/LoginController.m"; sourceTree = "<group>"; };
 		56EB7F6819EC84EA005CABF6 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				565A41BD1A51C24C00F193D9 /* UIKit.framework */,
 				565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */,
 				56EB7F6819EC84EA005CABF6 /* LaunchImage.png */,
+				56CF6CD31A52030E003772DD /* galaxy.png */,
 				5666568E19E8750A00FEA09E /* CFNetwork.framework */,
 				5666568F19E8750A00FEA09E /* MobileCoreServices.framework */,
 				5666569019E8750A00FEA09E /* SystemConfiguration.framework */,
@@ -517,6 +520,7 @@
 				56EDC7AD1A140D1600A72342 /* Main.storyboard in Resources */,
 				5666561019E863A400FEA09E /* Images.xcassets in Resources */,
 				56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */,
+				56CF6CD41A52030E003772DD /* galaxy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

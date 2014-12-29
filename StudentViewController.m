@@ -15,6 +15,7 @@
 #import "User.h"
 #import "School.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
+#import "TWTSideMenuViewController.h"
 
 @interface StudentViewController() {
     NSMutableArray *studentsObjects;
@@ -41,7 +42,11 @@
     [super viewDidLoad];
     [self.navigationController popViewControllerAnimated:YES];
     
+    self.leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Open" style:UIBarButtonItemStylePlain target:self action:@selector(openButtonPressed)];
     
+        
+    self.navigationItem.leftBarButtonItem = self.leftBarButton;
+
     
     //A delegate allows one object to send data to another when an event happens
     self.tableView.delegate = self;
@@ -121,6 +126,12 @@
     
     NSLog( @"Button clicked." );
 }
+
+- (void)openButtonPressed
+{
+    [self.sideMenuViewController openMenuAnimated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

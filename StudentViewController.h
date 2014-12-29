@@ -12,5 +12,6 @@
 
 @interface StudentViewController : UITableViewController
 @property (atomic, retain) Student *selectedStudent;
+@property (nonatomic, retain) UIBarButtonItem *leftBarButton;
 
 @end

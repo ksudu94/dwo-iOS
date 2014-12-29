@@ -247,12 +247,12 @@
                   symbolName = "__28-[LoginController btnLogin:]_block_invoke"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "441573794.027423"
+                  timestampString = "441585576.169311"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "2596">
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "4292">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -261,25 +261,25 @@
                   symbolName = "__28-[LoginController btnLogin:]_block_invoke"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "441573794.027577"
+                  timestampString = "441585576.169448"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "2608">
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "4304">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__28-[LoginController btnLogin:]_block_invoke132"
+                  symbolName = "__28-[LoginController btnLogin:]_block_invoke164"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "441573794.027734"
+                  timestampString = "441585576.169584"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
                   offsetFromSymbolStart = "58">
                </Location>
             </Locations>
@@ -387,12 +387,12 @@
                   symbolName = "__28-[LoginController btnLogin:]_block_invoke"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "441573794.031957"
+                  timestampString = "441585576.173372"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "1968">
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "1970">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -401,11 +401,11 @@
                   symbolName = "__28-[LoginController btnLogin:]_block_invoke_2"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "441573794.0321"
+                  timestampString = "441585576.173544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
                   offsetFromSymbolStart = "102">
                </Location>
             </Locations>
@@ -544,11 +544,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudentViewController.m"
-            timestampString = "440351936.247398"
+            timestampString = "441584166.053891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -560,11 +560,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StudentViewController.m"
-            timestampString = "440351936.247398"
+            timestampString = "441584166.053891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
             <Locations>
@@ -575,12 +575,12 @@
                   symbolName = "-[StudentViewController viewDidLoad]"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/StudentViewController.m"
-                  timestampString = "441573794.038405"
+                  timestampString = "441585576.180241"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "2136">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "2470">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -589,11 +589,11 @@
                   symbolName = "__36-[StudentViewController viewDidLoad]_block_invoke"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/StudentViewController.m"
-                  timestampString = "441573794.038532"
+                  timestampString = "441585576.180373"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
                   offsetFromSymbolStart = "94">
                </Location>
             </Locations>
@@ -772,6 +772,22 @@
             startingLineNumber = "206"
             endingLineNumber = "206"
             landmarkName = "-openMenuAnimated:completion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StudentViewController.m"
+            timestampString = "441584166.053891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-openButtonPressed"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

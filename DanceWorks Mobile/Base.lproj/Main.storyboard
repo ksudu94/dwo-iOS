@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="1kZ-YD-6Xq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kcw-lw-cgC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -152,17 +152,17 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fbm-RW-4xp"/>
                     <connections>
-                        <segue destination="bDS-FJ-9kI" kind="push" identifier="AccountInfoSegue" id="RKx-ds-R3p"/>
+                        <segue destination="1kZ-YD-6Xq" kind="push" id="Hiv-Y2-8aJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWA-al-oPO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2180" y="127.99999999999991"/>
+            <point key="canvasLocation" x="-2211" y="127"/>
         </scene>
         <!--Account Information-->
         <scene sceneID="vyu-V9-6nQ">
             <objects>
-                <viewController storyboardIdentifier="AccountInformation" id="bDS-FJ-9kI" customClass="AccountInformation" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountInformation" title="Account Information" id="bDS-FJ-9kI" customClass="AccountInformation" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EtY-Zi-vhM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,6 +306,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Information" id="fV2-fw-nAj"/>
                     <navigationItem key="navigationItem" id="SFH-Xc-CiZ"/>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="500"/>
                     <connections>
@@ -321,7 +322,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="id2-6F-uex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1746" y="127"/>
+            <point key="canvasLocation" x="-1337" y="132"/>
+        </scene>
+        <!--Account Students-->
+        <scene sceneID="7Rk-BS-xlG">
+            <objects>
+                <viewController title="Account Students" id="qpR-GC-LrI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SqQ-VQ-5Pf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Some Account Students" id="yVF-8u-Eyc">
+                                <rect key="frame" x="6" y="106" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Students" image="first" id="X6X-SP-UPd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wlo-js-h3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-915" y="127"/>
         </scene>
         <!--Students-->
         <scene sceneID="EgU-6G-kyL">
@@ -361,17 +386,17 @@
                     <navigationItem key="navigationItem" id="8fv-zD-dMA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="bpV-V2-Q0O" kind="push" identifier="StudentInfoSegue" id="ND8-A7-3xV"/>
+                        <segue destination="Cjr-vi-fuo" kind="push" id="zxR-IG-rzq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjN-0f-C1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2168" y="801.99999999999955"/>
+            <point key="canvasLocation" x="-2211" y="801"/>
         </scene>
         <!--Students-->
         <scene sceneID="C13-9j-ltU">
             <objects>
-                <navigationController title="Students" id="Dvl-qm-yUt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StudentNavigationController" title="Students" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dvl-qm-yUt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Students" image="second" id="H3V-MD-ByL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ksd-MM-2U1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -388,10 +413,10 @@
             </objects>
             <point key="canvasLocation" x="-2634" y="817.99999999999955"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Account Tab Bar Controller-->
         <scene sceneID="n66-Wp-gsL">
             <objects>
-                <tabBarController id="1kZ-YD-6Xq" sceneMemberID="viewController">
+                <tabBarController title="Account Tab Bar Controller" id="1kZ-YD-6Xq" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZeZ-j0-1Vq"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Kn7-cp-ulI">
@@ -400,19 +425,18 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Kcw-lw-cgC" kind="relationship" relationship="viewControllers" id="tct-9x-8W0"/>
-                        <segue destination="Dvl-qm-yUt" kind="relationship" relationship="viewControllers" id="kgf-a2-dH1"/>
-                        <segue destination="7VF-Bt-XAw" kind="relationship" relationship="viewControllers" id="kHQ-iB-mRh"/>
+                        <segue destination="bDS-FJ-9kI" kind="relationship" relationship="viewControllers" id="fFy-3c-mRG"/>
+                        <segue destination="qpR-GC-LrI" kind="relationship" relationship="viewControllers" id="r5S-vj-aSi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5N-af-Fub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1760" y="-784"/>
+            <point key="canvasLocation" x="-1786" y="127"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="1cA-Ku-mGb">
             <objects>
-                <navigationController title="Accounts" id="Kcw-lw-cgC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AccountNavigationController" title="Accounts" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kcw-lw-cgC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Accounts" image="first" id="ZY3-92-lTW"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="QI8-Vp-lBQ"/>
@@ -486,7 +510,7 @@
         <!--Classes-->
         <scene sceneID="Wxh-UJ-Y3D">
             <objects>
-                <navigationController title="Classes" navigationBarHidden="YES" id="7VF-Bt-XAw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ClassesNavigationController" title="Classes" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="7VF-Bt-XAw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Classes" image="first" id="Zcl-tK-gwH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WJD-Bw-UNK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -500,7 +524,7 @@
             </objects>
             <point key="canvasLocation" x="-2634" y="1527.9999999999991"/>
         </scene>
-        <!--Student Information-->
+        <!--Item-->
         <scene sceneID="de7-5F-ebH">
             <objects>
                 <viewController storyboardIdentifier="StudentInformation" id="bpV-V2-Q0O" customClass="StudentInformation" sceneMemberID="viewController">
@@ -599,25 +623,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hWY-QQ-f1A">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="tfH-2m-gyf">
-                                        <connections>
-                                            <segue destination="VnU-Ob-Q9m" kind="push" id="okU-9X-uyK"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Item" id="ojk-bz-C1G">
-                                        <connections>
-                                            <segue destination="vGk-0U-eoU" kind="push" id="66c-IX-A6M"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="vUc-Zs-ktc"/>
                     <navigationItem key="navigationItem" id="FZg-g3-9f2">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IfG-Ru-tB5"/>
                     </navigationItem>
@@ -632,18 +641,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckV-dn-MBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1752" y="801.99999999999955"/>
+            <point key="canvasLocation" x="-1337" y="801"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="9AO-JR-g7s">
+        <!--Student Tab Bar Controller-->
+        <scene sceneID="Wjr-zS-Spb">
             <objects>
-                <viewController id="VnU-Ob-Q9m" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="41C-b5-lSv">
+                <tabBarController title="Student Tab Bar Controller" id="Cjr-vi-fuo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jOL-MS-ZP7"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ckm-XD-hh6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bpV-V2-Q0O" kind="relationship" relationship="viewControllers" id="VS4-mv-Qpn"/>
+                        <segue destination="LRT-FM-gdL" kind="relationship" relationship="viewControllers" id="ofm-1z-7LJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uz1-0m-6EF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1786" y="801"/>
+        </scene>
+        <!--Account Students-->
+        <scene sceneID="J2l-0c-xsZ">
+            <objects>
+                <viewController title="Account Students" id="LRT-FM-gdL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YRj-so-ikK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="First Page" id="xuk-A4-izo">
-                                <rect key="frame" x="0.0" y="85" width="320" height="135"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Second Student page" id="JpG-50-z8Y">
+                                <rect key="frame" x="6" y="106" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -652,35 +681,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FGW-gp-rMH"/>
+                    <tabBarItem key="tabBarItem" title="Students" image="first" id="2rZ-pI-wG9"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="19w-je-0JV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUz-L2-Aza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1413" y="811"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="nS6-af-tZ3">
-            <objects>
-                <viewController id="vGk-0U-eoU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kqq-me-3Zc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Second page" id="Py1-hR-crH">
-                                <rect key="frame" x="0.0" y="67" width="320" height="135"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="l0u-rh-gZK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AJX-Jw-oz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1051" y="811"/>
+            <point key="canvasLocation" x="-915" y="801"/>
         </scene>
     </scenes>
     <resources>
