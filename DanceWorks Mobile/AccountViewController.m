@@ -41,18 +41,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Declare button
-    /*self.rightBarButton = [[UIBarButtonItem alloc] init];
-    self.rightBarButton.title = @"Logout";
-    self.rightBarButton.target = self;
-    self.rightBarButton.action = @selector(LogOut:);*/
-
+   
     self.rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(LogOut:)];
     [self.navigationController popViewControllerAnimated:YES];
 
     self.leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Open" style:UIBarButtonItemStylePlain target:self action:@selector(openButtonPressed)];
-    
 
     self.navigationItem.rightBarButtonItem = self.rightBarButton;
 
@@ -141,7 +134,6 @@
                 
                 
                 // 3
-                //NSError *e = nil;
                 self.accountsDictionary = accountResponseObject;
                 [self saveAccounts];
                 [self.tableView reloadData];

@@ -69,7 +69,8 @@
     
     NSMutableDictionary *params = [NSMutableDictionary new];
     
-    [params setObject:@" Where schid=11" forKey:@"Where"];
+    [params setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"AcctID"];
+    [params setObject:[NSString stringWithFormat:@"%d", self.school.SchID] forKey:@"SchID"];
     [params setObject:[NSString stringWithFormat:@"%d", self.user.UserID]  forKey:@"UserID"];
     [params setObject:self.user.UserGUID forKey:@"UserGUID"];
     

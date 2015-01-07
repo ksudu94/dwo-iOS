@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560B82131A5AE6BA00F4C430 /* AccountStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B82121A5AE6BA00F4C430 /* AccountStudentController.m */; };
+		560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B82151A5AE71B00F4C430 /* StudentClassesController.m */; };
 		560C247D1A13F82900AAD013 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C247C1A13F82900AAD013 /* Student.m */; };
 		560C24831A13FC1100AAD013 /* Classes.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C24821A13FC1100AAD013 /* Classes.m */; };
 		561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD301A0AC5C200269F18 /* NSObject+RMArchivable.m */; };
@@ -74,6 +76,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560B82111A5AE6BA00F4C430 /* AccountStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountStudentController.h; sourceTree = "<group>"; };
+		560B82121A5AE6BA00F4C430 /* AccountStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountStudentController.m; sourceTree = "<group>"; };
+		560B82141A5AE71B00F4C430 /* StudentClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentClassesController.h; path = "DanceWorks Mobile/StudentClassesController.h"; sourceTree = "<group>"; };
+		560B82151A5AE71B00F4C430 /* StudentClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudentClassesController.m; path = "DanceWorks Mobile/StudentClassesController.m"; sourceTree = "<group>"; };
 		560C247B1A13F82900AAD013 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		560C247C1A13F82900AAD013 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		560C24811A13FC1100AAD013 /* Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classes.h; sourceTree = "<group>"; };
@@ -243,6 +249,10 @@
 				56345F711A2D292700F7074C /* AccountInformation.m */,
 				5642E1811A3F345100DA2597 /* StudentInformation.h */,
 				5642E1821A3F345100DA2597 /* StudentInformation.m */,
+				560B82111A5AE6BA00F4C430 /* AccountStudentController.h */,
+				560B82121A5AE6BA00F4C430 /* AccountStudentController.m */,
+				560B82141A5AE71B00F4C430 /* StudentClassesController.h */,
+				560B82151A5AE71B00F4C430 /* StudentClassesController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -263,6 +273,13 @@
 		566655F319E863A300FEA09E = {
 			isa = PBXGroup;
 			children = (
+				566655FE19E863A300FEA09E /* DanceWorks Mobile */,
+				561AAD3D1A0D634F00269F18 /* Controllers */,
+				561AAD3C1A0D631F00269F18 /* Models */,
+				5666561819E863A400FEA09E /* DanceWorks MobileTests */,
+				566655FD19E863A300FEA09E /* Products */,
+				565A41B31A51BFD100F193D9 /* TWTSideMenuViewController */,
+				561AAD2E1A0AC5C200269F18 /* RMMapper */,
 				565A41BF1A51C25900F193D9 /* Foundation.framework */,
 				565A41BD1A51C24C00F193D9 /* UIKit.framework */,
 				565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */,
@@ -272,13 +289,6 @@
 				5666568F19E8750A00FEA09E /* MobileCoreServices.framework */,
 				5666569019E8750A00FEA09E /* SystemConfiguration.framework */,
 				5666567019E8749200FEA09E /* AFNetworking */,
-				566655FE19E863A300FEA09E /* DanceWorks Mobile */,
-				561AAD3D1A0D634F00269F18 /* Controllers */,
-				561AAD3C1A0D631F00269F18 /* Models */,
-				5666561819E863A400FEA09E /* DanceWorks MobileTests */,
-				566655FD19E863A300FEA09E /* Products */,
-				565A41B31A51BFD100F193D9 /* TWTSideMenuViewController */,
-				561AAD2E1A0AC5C200269F18 /* RMMapper */,
 				5666564919E8641800FEA09E /* JSONModel */,
 			);
 			sourceTree = "<group>";
@@ -547,6 +557,7 @@
 				5684338F19F59C9800A28B52 /* IsLoggedIn.m in Sources */,
 				5666566719E8641800FEA09E /* NSArray+JSONModel.m in Sources */,
 				5666566519E8641800FEA09E /* JSONModelClassProperty.m in Sources */,
+				560B82131A5AE6BA00F4C430 /* AccountStudentController.m in Sources */,
 				561AAD381A0AC5C200269F18 /* NSObject+RMCopyable.m in Sources */,
 				561AAD3A1A0AC5C200269F18 /* RMMapper.m in Sources */,
 				5666568619E874AF00FEA09E /* AFHTTPSessionManager.m in Sources */,
@@ -554,6 +565,7 @@
 				560C247D1A13F82900AAD013 /* Student.m in Sources */,
 				5666566F19E8740400FEA09E /* Account.m in Sources */,
 				5666568719E874AF00FEA09E /* AFNetworkReachabilityManager.m in Sources */,
+				560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */,
 				561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */,
 				5666568419E874AF00FEA09E /* AFHTTPRequestOperation.m in Sources */,
 				5666568A19E874AF00FEA09E /* AFURLRequestSerialization.m in Sources */,
