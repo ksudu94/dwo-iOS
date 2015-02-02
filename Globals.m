@@ -20,7 +20,10 @@
     unsigned long long milliseconds = [[dateString substringWithRange:range] longLongValue];
     //NSLog(@"%llu",milliseconds);
     NSTimeInterval interval = milliseconds/1000;
-    return [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDate *formattedDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    //NSDateComponents *components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:formattedDate];
+    //NSDate *dateWithoutTime = [[NSCalendar currentCalendar] dateFromComponents:components];
+    return formattedDate;
 }
 
 -(NSMutableString *) buildURL:(NSMutableString *) methodName fromDictionary:(NSMutableDictionary *) dictionary

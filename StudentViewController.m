@@ -17,23 +17,6 @@
 #import "NSUserDefaults+RMSaveCustomObject.h"
 #import "TWTSideMenuViewController.h"
 
-@interface StudentViewController() {
-    NSMutableArray *studentsObjects;
-    NSMutableData *_receivedData;
-    NSDateFormatter *dateFormatter;
-    Student *student;
-    Globals *oGlobal;
-    
-    
-}
-
-@property (nonatomic, strong) User *user;
-@property (nonatomic, strong) School *school;
-
-@property(strong) NSDictionary *data;
-
-@end
-
 
 @implementation StudentViewController
 
@@ -52,8 +35,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    dateFormatter = [[NSDateFormatter alloc] init];
-    oGlobal = [[Globals alloc] init];
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.oGlobal = [[Globals alloc] init];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
@@ -63,23 +46,24 @@
     
     
     NSError *e = nil;
-    self.user = [[User alloc] initWithDictionary:dictUser error:&e];
-    self.school = [[School alloc] initWithDictionary:dictSchool error:&e];
+    self.User = [[User alloc] initWithDictionary:dictUser error:&e];
+    self.School = [[School alloc] initWithDictionary:dictSchool error:&e];
     
     
     NSMutableDictionary *params = [NSMutableDictionary new];
     
+    //AcctID of 0 means get all students
     [params setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"AcctID"];
-    [params setObject:[NSString stringWithFormat:@"%d", self.school.SchID] forKey:@"SchID"];
-    [params setObject:[NSString stringWithFormat:@"%d", self.user.UserID]  forKey:@"UserID"];
-    [params setObject:self.user.UserGUID forKey:@"UserGUID"];
+    [params setObject:[NSString stringWithFormat:@"%d", self.School.SchID] forKey:@"SchID"];
+    [params setObject:[NSString stringWithFormat:@"%d", self.User.UserID]  forKey:@"UserID"];
+    [params setObject:self.User.UserGUID forKey:@"UserGUID"];
     
     NSMutableString *studentMethod = [[NSMutableString alloc] init];
     [studentMethod setString:@"getStudents?"];
     
-    NSString * url = [oGlobal buildURL:studentMethod fromDictionary:params];
+    NSString * url = [self.oGlobal buildURL:studentMethod fromDictionary:params];
     
-    NSURL *studentURL =  [NSURL URLWithString:[oGlobal URLEncodeString:url]];
+    NSURL *studentURL =  [NSURL URLWithString:[self.oGlobal URLEncodeString:url]];
     
     NSURLRequest *myRequest = [NSURLRequest requestWithURL:studentURL];
     
@@ -148,7 +132,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self->studentsObjects.count;
+    return self.studentsObjects.count;
 }
 
 
@@ -157,8 +141,8 @@
     NSString *id = @"StudentCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:id forIndexPath:indexPath];
     
-    Student *newStudent = [studentsObjects objectAtIndex: indexPath.row];
-    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    Student *newStudent = [self.studentsObjects objectAtIndex: indexPath.row];
+    [self.dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
     NSString *fullName=[NSString stringWithFormat:@"%@%@%@",newStudent.FName,@" ",newStudent.LName];
 
@@ -170,14 +154,14 @@
 {
 
     StudentInformation *studentInformation = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"StudentInformation"];
-    studentInformation.selectedStudent = [studentsObjects objectAtIndex:indexPath.row];
+    studentInformation.selectedStudent = [self.studentsObjects objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:studentInformation animated:NO];
 }
 
 -(void) saveStudents {
     //triggered when all data is loaded
     NSError *e = nil;
-    studentsObjects = [[NSMutableArray alloc] init];
+    self.studentsObjects = [[NSMutableArray alloc] init];
     
     if (e){
         NSLog(@"JSONObjectWithData error: %@", e);
@@ -185,12 +169,12 @@
         for (NSDictionary *dictionary in self.data)
         {
             //Create account for every response
-            student = [[Student alloc] initWithDictionary:dictionary error:&e];
+            self.Student = [[Student alloc] initWithDictionary:dictionary error:&e];
             
             //The DateReg value needs to be converted to readable format so that when you save it. It's not nill
             //student.DateReg = [oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];
             
-            [studentsObjects addObject:student];
+            [self.studentsObjects addObject:self.Student];
             
             
             

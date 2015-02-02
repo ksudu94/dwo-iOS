@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		560B82131A5AE6BA00F4C430 /* AccountStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B82121A5AE6BA00F4C430 /* AccountStudentController.m */; };
 		560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B82151A5AE71B00F4C430 /* StudentClassesController.m */; };
+		560B821B1A5F1BE600F4C430 /* AccountTransactionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B821A1A5F1BE600F4C430 /* AccountTransactionsController.m */; };
+		560B821E1A6031C100F4C430 /* AccountTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B821D1A6031C100F4C430 /* AccountTransactions.m */; };
+		560B82291A6079E000F4C430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560B82271A6079E000F4C430 /* Main.storyboard */; };
+		560B822C1A64296F00F4C430 /* AccountTransactionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B822B1A64296F00F4C430 /* AccountTransactionsCell.m */; };
+		560B82301A642ACC00F4C430 /* AccountTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */; };
 		560C247D1A13F82900AAD013 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C247C1A13F82900AAD013 /* Student.m */; };
 		560C24831A13FC1100AAD013 /* Classes.m in Sources */ = {isa = PBXBuildFile; fileRef = 560C24821A13FC1100AAD013 /* Classes.m */; };
 		561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD301A0AC5C200269F18 /* NSObject+RMArchivable.m */; };
@@ -56,13 +61,11 @@
 		5666569219E8750A00FEA09E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666568F19E8750A00FEA09E /* MobileCoreServices.framework */; };
 		5666569319E8750A00FEA09E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5666569019E8750A00FEA09E /* SystemConfiguration.framework */; };
 		5684338919EF1D0600A28B52 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684338819EF1D0600A28B52 /* Globals.m */; };
-		5684338F19F59C9800A28B52 /* IsLoggedIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5684338E19F59C9800A28B52 /* IsLoggedIn.m */; };
 		56CF6CD41A52030E003772DD /* galaxy.png in Resources */ = {isa = PBXBuildFile; fileRef = 56CF6CD31A52030E003772DD /* galaxy.png */; };
 		56EB74C319FED15A007C5E22 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB74C219FED15A007C5E22 /* LoginController.m */; };
 		56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EB7F6819EC84EA005CABF6 /* LaunchImage.png */; };
 		56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB7F7A19EF1496005CABF6 /* AccountViewController.m */; };
 		56EB7F7E19EF18F9005CABF6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB7F7D19EF18F9005CABF6 /* User.m */; };
-		56EDC7AD1A140D1600A72342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EDC7AB1A140D1600A72342 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,14 @@
 		560B82121A5AE6BA00F4C430 /* AccountStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountStudentController.m; sourceTree = "<group>"; };
 		560B82141A5AE71B00F4C430 /* StudentClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentClassesController.h; path = "DanceWorks Mobile/StudentClassesController.h"; sourceTree = "<group>"; };
 		560B82151A5AE71B00F4C430 /* StudentClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudentClassesController.m; path = "DanceWorks Mobile/StudentClassesController.m"; sourceTree = "<group>"; };
+		560B82191A5F1BE600F4C430 /* AccountTransactionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTransactionsController.h; sourceTree = "<group>"; };
+		560B821A1A5F1BE600F4C430 /* AccountTransactionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTransactionsController.m; sourceTree = "<group>"; };
+		560B821C1A6031C100F4C430 /* AccountTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTransactions.h; sourceTree = "<group>"; };
+		560B821D1A6031C100F4C430 /* AccountTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTransactions.m; sourceTree = "<group>"; };
+		560B82281A6079E000F4C430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		560B822A1A64296F00F4C430 /* AccountTransactionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountTransactionsCell.h; path = "DanceWorks Mobile/AccountTransactionsCell.h"; sourceTree = "<group>"; };
+		560B822B1A64296F00F4C430 /* AccountTransactionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTransactionsCell.m; path = "DanceWorks Mobile/AccountTransactionsCell.m"; sourceTree = "<group>"; };
+		560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTransactionCell.xib; sourceTree = "<group>"; };
 		560C247B1A13F82900AAD013 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		560C247C1A13F82900AAD013 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		560C24811A13FC1100AAD013 /* Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classes.h; sourceTree = "<group>"; };
@@ -165,8 +176,6 @@
 		5666569019E8750A00FEA09E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5684338719EF1D0600A28B52 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		5684338819EF1D0600A28B52 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
-		5684338D19F59C9800A28B52 /* IsLoggedIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IsLoggedIn.h; path = ../IsLoggedIn.h; sourceTree = "<group>"; };
-		5684338E19F59C9800A28B52 /* IsLoggedIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IsLoggedIn.m; path = ../IsLoggedIn.m; sourceTree = "<group>"; };
 		56CF6CD31A52030E003772DD /* galaxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxy.png; sourceTree = "<group>"; };
 		56EB74C119FED15A007C5E22 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = "DanceWorks Mobile/LoginController.h"; sourceTree = "<group>"; };
 		56EB74C219FED15A007C5E22 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = "DanceWorks Mobile/LoginController.m"; sourceTree = "<group>"; };
@@ -175,7 +184,6 @@
 		56EB7F7A19EF1496005CABF6 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = "DanceWorks Mobile/AccountViewController.m"; sourceTree = "<group>"; };
 		56EB7F7C19EF18F9005CABF6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		56EB7F7D19EF18F9005CABF6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		56EDC7AC1A140D1600A72342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +210,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560B82171A5DEA2100F4C430 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				560B822A1A64296F00F4C430 /* AccountTransactionsCell.h */,
+				560B822B1A64296F00F4C430 /* AccountTransactionsCell.m */,
+				560B82111A5AE6BA00F4C430 /* AccountStudentController.h */,
+				560B82121A5AE6BA00F4C430 /* AccountStudentController.m */,
+				56345F701A2D292700F7074C /* AccountInformation.h */,
+				56345F711A2D292700F7074C /* AccountInformation.m */,
+				56EB7F7919EF1496005CABF6 /* AccountViewController.h */,
+				56EB7F7A19EF1496005CABF6 /* AccountViewController.m */,
+				560B82191A5F1BE600F4C430 /* AccountTransactionsController.h */,
+				560B821A1A5F1BE600F4C430 /* AccountTransactionsController.m */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
+		560B82181A5DEA2700F4C430 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				56345F6D1A2D05B700F7074C /* StudentViewController.h */,
+				56345F6E1A2D05B700F7074C /* StudentViewController.m */,
+				5642E1811A3F345100DA2597 /* StudentInformation.h */,
+				5642E1821A3F345100DA2597 /* StudentInformation.m */,
+				560B82141A5AE71B00F4C430 /* StudentClassesController.h */,
+				560B82151A5AE71B00F4C430 /* StudentClassesController.m */,
+			);
+			name = Students;
+			sourceTree = "<group>";
+		};
 		561AAD2E1A0AC5C200269F18 /* RMMapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +260,8 @@
 			children = (
 				560C24811A13FC1100AAD013 /* Classes.h */,
 				560C24821A13FC1100AAD013 /* Classes.m */,
+				560B821C1A6031C100F4C430 /* AccountTransactions.h */,
+				560B821D1A6031C100F4C430 /* AccountTransactions.m */,
 				5684338719EF1D0600A28B52 /* Globals.h */,
 				5684338819EF1D0600A28B52 /* Globals.m */,
 				56EB7F7C19EF18F9005CABF6 /* User.h */,
@@ -239,20 +279,10 @@
 		561AAD3D1A0D634F00269F18 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				560B82181A5DEA2700F4C430 /* Students */,
+				560B82171A5DEA2100F4C430 /* Accounts */,
 				56EB74C119FED15A007C5E22 /* LoginController.h */,
 				56EB74C219FED15A007C5E22 /* LoginController.m */,
-				56EB7F7919EF1496005CABF6 /* AccountViewController.h */,
-				56EB7F7A19EF1496005CABF6 /* AccountViewController.m */,
-				56345F6D1A2D05B700F7074C /* StudentViewController.h */,
-				56345F6E1A2D05B700F7074C /* StudentViewController.m */,
-				56345F701A2D292700F7074C /* AccountInformation.h */,
-				56345F711A2D292700F7074C /* AccountInformation.m */,
-				5642E1811A3F345100DA2597 /* StudentInformation.h */,
-				5642E1821A3F345100DA2597 /* StudentInformation.m */,
-				560B82111A5AE6BA00F4C430 /* AccountStudentController.h */,
-				560B82121A5AE6BA00F4C430 /* AccountStudentController.m */,
-				560B82141A5AE71B00F4C430 /* StudentClassesController.h */,
-				560B82151A5AE71B00F4C430 /* StudentClassesController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +303,7 @@
 		566655F319E863A300FEA09E = {
 			isa = PBXGroup;
 			children = (
+				560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */,
 				566655FE19E863A300FEA09E /* DanceWorks Mobile */,
 				561AAD3D1A0D634F00269F18 /* Controllers */,
 				561AAD3C1A0D631F00269F18 /* Models */,
@@ -306,10 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				5666560319E863A400FEA09E /* AppDelegate.h */,
-				56EDC7AB1A140D1600A72342 /* Main.storyboard */,
+				560B82271A6079E000F4C430 /* Main.storyboard */,
 				5666560419E863A400FEA09E /* AppDelegate.m */,
-				5684338D19F59C9800A28B52 /* IsLoggedIn.h */,
-				5684338E19F59C9800A28B52 /* IsLoggedIn.m */,
 				5666560F19E863A400FEA09E /* Images.xcassets */,
 				566655FF19E863A300FEA09E /* Supporting Files */,
 			);
@@ -527,10 +556,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56EDC7AD1A140D1600A72342 /* Main.storyboard in Resources */,
+				560B82291A6079E000F4C430 /* Main.storyboard in Resources */,
 				5666561019E863A400FEA09E /* Images.xcassets in Resources */,
 				56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */,
 				56CF6CD41A52030E003772DD /* galaxy.png in Resources */,
+				560B82301A642ACC00F4C430 /* AccountTransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +584,6 @@
 				56EB7F7E19EF18F9005CABF6 /* User.m in Sources */,
 				561AAD391A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				5666566619E8641800FEA09E /* JSONModelError.m in Sources */,
-				5684338F19F59C9800A28B52 /* IsLoggedIn.m in Sources */,
 				5666566719E8641800FEA09E /* NSArray+JSONModel.m in Sources */,
 				5666566519E8641800FEA09E /* JSONModelClassProperty.m in Sources */,
 				560B82131A5AE6BA00F4C430 /* AccountStudentController.m in Sources */,
@@ -567,6 +596,7 @@
 				5666568719E874AF00FEA09E /* AFNetworkReachabilityManager.m in Sources */,
 				560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */,
 				561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */,
+				560B821E1A6031C100F4C430 /* AccountTransactions.m in Sources */,
 				5666568419E874AF00FEA09E /* AFHTTPRequestOperation.m in Sources */,
 				5666568A19E874AF00FEA09E /* AFURLRequestSerialization.m in Sources */,
 				565A41C41A51C32700F193D9 /* TWTMenuViewController.h in Sources */,
@@ -576,6 +606,7 @@
 				565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */,
 				5666568919E874AF00FEA09E /* AFURLConnectionOperation.m in Sources */,
 				5666568C19E874AF00FEA09E /* AFURLSessionManager.m in Sources */,
+				560B821B1A5F1BE600F4C430 /* AccountTransactionsController.m in Sources */,
 				56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */,
 				5666560519E863A400FEA09E /* AppDelegate.m in Sources */,
 				5666566B19E8641800FEA09E /* JSONKeyMapper.m in Sources */,
@@ -588,6 +619,7 @@
 				5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */,
 				561AAD401A0D640B00269F18 /* School.m in Sources */,
 				5666566C19E8641800FEA09E /* JSONValueTransformer.m in Sources */,
+				560B822C1A64296F00F4C430 /* AccountTransactionsCell.m in Sources */,
 				5666568819E874AF00FEA09E /* AFSecurityPolicy.m in Sources */,
 				5666566919E8641800FEA09E /* JSONHTTPClient.m in Sources */,
 				5666568519E874AF00FEA09E /* AFHTTPRequestOperationManager.m in Sources */,
@@ -615,10 +647,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		56EDC7AB1A140D1600A72342 /* Main.storyboard */ = {
+		560B82271A6079E000F4C430 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				56EDC7AC1A140D1600A72342 /* Base */,
+				560B82281A6079E000F4C430 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

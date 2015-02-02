@@ -11,6 +11,8 @@
 #import "NSUserDefaults+RMSaveCustomObject.h"
 #import "AFNetworking.h"
 #import "Student.h"
+#import "AccountTransactionsController.h"
+
 
 
 @implementation AccountStudentController
@@ -19,24 +21,26 @@
 -(void) viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.tabBarController.delegate = self;
+
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
     //Pull stored objects from NSUserDefaults as dictionaries
     NSMutableDictionary *dictUser = [defaults rm_customObjectForKey:@"SavedUser"];
     NSMutableDictionary *dictSchool = [defaults rm_customObjectForKey:@"SavedSchool"];
-    //A delegate allows one object to send data to another when an event happens
-    self.accountStudentTable.delegate = self;
-    self.accountStudentTable.dataSource = self;
     
     NSError *e = nil;
     self.user = [[User alloc] initWithDictionary:dictUser error:&e];
     self.school = [[School alloc] initWithDictionary:dictSchool error:&e];
     self.oGlobals = [[Globals alloc] init];
     
+    self.leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backToList)];
+        
+    self.navigationItem.leftBarButtonItem = self.leftBarButton;
+   
     NSMutableDictionary *params = [NSMutableDictionary new];
     
-    
+    //The acctid ensures it does not get the whole list
     [params setObject:[NSString stringWithFormat:@"%d", self.selectedAccount.AcctID] forKey:@"AcctID"];
     [params setObject:[NSString stringWithFormat:@"%d", self.School.SchID] forKey:@"SchID"];
     [params setObject:[NSString stringWithFormat:@"%d", self.User.UserID]  forKey:@"UserID"];
@@ -85,6 +89,10 @@
 
 }
 
+- (void)backToList
+{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -139,39 +147,25 @@
     
 }
 
--(void) tabBar:(UITabBar *) tabBar didSelectItem:(UITabBarItem *)item
+
+-(BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    
-    
-    //This breaks if it is inside one of the cases
-    AccountInformation *infoController = nil;
-    AccountStudentController *controller = nil;
-    
-    switch(item.tag)
+    if([viewController isKindOfClass:[AccountInformation class]])
     {
-        case 1:
-            infoController = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"AccountInformation"];
-            infoController.selectedAccount = self.selectedAccount;
-            [self.navigationController pushViewController:infoController animated:YES];            break;
-        case 2:
-            controller = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"AccountStudents"];
-            controller.selectedAccount = self.selectedAccount;
-            [self.navigationController pushViewController:controller animated:YES];
-            break;
-        case 3:
-            NSLog(@"%d", item.tag);
-            break;
-        case 4:
-            NSLog(@"%d", item.tag);
-            break;
-        case 5:
-            NSLog(@"%d", item.tag);
-            break;
-            
-            
+        AccountInformation *informationController = (AccountInformation *) viewController;
+        informationController.selectedAccount = self.selectedAccount;
+        
+    }
+    else if([viewController isKindOfClass:[AccountTransactionsController class]])
+    {
+        AccountTransactionsController *transactionsController = (AccountTransactionsController *) viewController;
+        transactionsController.selectedAccount = self.selectedAccount;
     }
     
+    return TRUE;
 }
+
+
 
 
 

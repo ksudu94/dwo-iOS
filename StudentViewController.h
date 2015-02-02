@@ -8,10 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "Student.h"
-
+#import "User.h"
+#import "School.h"
+#import "Globals.h"
 
 @interface StudentViewController : UITableViewController
+
 @property (atomic, retain) Student *selectedStudent;
+@property (nonatomic, strong) User *User;
+@property (nonatomic, strong) School *School;
+@property (nonatomic, strong) Student *Student;
+@property (nonatomic, strong) Globals *oGlobal;
+
 @property (nonatomic, retain) UIBarButtonItem *leftBarButton;
+
+@property (nonatomic, strong) NSMutableArray *studentsObjects;
+@property (nonatomic, strong) NSMutableData *_receivedData;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSDictionary *data;
+
 
 @end

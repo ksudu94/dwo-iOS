@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Account.h"
-@interface AccountInformation : UIViewController <UITabBarDelegate>
+#import "AccountStudentController.h"
+#import "AccountTransactions.h"
+@interface AccountInformation : UIViewController <UITabBarControllerDelegate, UIPageViewControllerDataSource>
 
 @property (atomic, retain) Account *selectedAccount;
-@property (weak, nonatomic) IBOutlet UITabBar *accountTabBar;
+
+@property (nonatomic, retain) AccountStudentController *accountStudentsController;
+@property (nonatomic, retain) AccountTransactions *accountTransactionsController;
+@property (strong, nonatomic) UIPageViewController *pageController;
+
+
 @end

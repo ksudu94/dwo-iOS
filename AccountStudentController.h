@@ -13,17 +13,20 @@
 #import "Globals.h"
 #import "Student.h"
 
-@interface AccountStudentController : UIViewController <UITabBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface AccountStudentController : UIViewController <UITabBarControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 
-@property (atomic, retain) Account *selectedAccount;
-@property (weak, nonatomic) IBOutlet UITabBar *accountTabBar;
-@property (weak, nonatomic) IBOutlet UITableView *accountStudentTable;
+@property (strong, nonatomic) Account *selectedAccount;
 @property (nonatomic, strong) User *User;
 @property (nonatomic, strong) School *School;
 @property (nonatomic, strong) Student *Student;
-@property (nonatomic, strong) NSDictionary *data;
 @property (nonatomic, strong) Globals *oGlobals;
+
+@property (weak, nonatomic) IBOutlet UITableView *accountStudentTable;
+
+@property (nonatomic, retain) UIBarButtonItem *leftBarButton;
+
 @property (nonatomic, strong) NSMutableArray *studentsObject;
+@property (nonatomic, strong) NSDictionary *data;
 
 @end

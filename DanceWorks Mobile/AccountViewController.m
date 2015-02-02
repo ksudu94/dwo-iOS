@@ -18,26 +18,11 @@
 #import "TWTSideMenuViewController.h"
 
 
-@interface AccountViewController() {
-    NSMutableArray *accountsObjects;
-    NSMutableData *_receivedData;
-    NSDateFormatter *dateFormatter;
-    Globals *oGlobal;
-
-    
-}
-
-@property (nonatomic, strong) User *objUser;
-@property (nonatomic, strong) Account *objAccount;
-
-@property (nonatomic, strong) School *objSchool;
-
-@property (nonatomic, strong) NSDictionary *accountsDictionary;
-
-@end
-
 @implementation AccountViewController
 
+/**
+ * _oGlobal is the same as self.oGlobal if the object is created in the header file
+ **/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,8 +41,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    dateFormatter = [[NSDateFormatter alloc] init];
-    oGlobal = [[Globals alloc] init];
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.oGlobal = [[Globals alloc] init];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
@@ -84,7 +69,7 @@
     NSMutableString *userMethod = [[NSMutableString alloc] init];
     [userMethod setString:@"getUserByID?"];
     
-    NSURL *userURL =  [NSURL URLWithString:[oGlobal buildURL:userMethod fromDictionary:userParams]];
+    NSURL *userURL =  [NSURL URLWithString:[self.oGlobal buildURL:userMethod fromDictionary:userParams]];
     
     NSURLRequest *userRequest = [NSURLRequest requestWithURL:userURL];
 
@@ -122,7 +107,7 @@
             NSMutableString *accountMethod = [[NSMutableString alloc] init];
             [accountMethod setString:@"getAccountsJS?"];
             
-            NSURL *accountURL =  [NSURL URLWithString:[oGlobal buildURL:accountMethod fromDictionary:accountParams]];
+            NSURL *accountURL =  [NSURL URLWithString:[self.oGlobal buildURL:accountMethod fromDictionary:accountParams]];
             NSURLRequest *accountRequest = [NSURLRequest requestWithURL:accountURL];
 
             AFHTTPRequestOperation *accountOperation = [[AFHTTPRequestOperation alloc] initWithRequest:accountRequest];
@@ -169,7 +154,7 @@
             NSMutableString *schoolMethod = [[NSMutableString alloc] init];
             [schoolMethod setString:@"getSchool?"];
             
-            NSURL *mySchoolURL =  [NSURL URLWithString:[oGlobal buildURL:schoolMethod fromDictionary:schoolParams]];
+            NSURL *mySchoolURL =  [NSURL URLWithString:[self.oGlobal buildURL:schoolMethod fromDictionary:schoolParams]];
             
             NSURLRequest *mySchoolRequest = [NSURLRequest requestWithURL:mySchoolURL];
             
@@ -267,7 +252,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self->accountsObjects.count;
+    return self.accountsObjects.count;
 }
 
 
@@ -276,8 +261,8 @@
     NSString *id = @"AccountCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:id forIndexPath:indexPath];
     
-    Account *newAccount = [accountsObjects objectAtIndex: indexPath.row];
-    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    Account *newAccount = [_accountsObjects objectAtIndex: indexPath.row];
+    [_dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
     NSString *fullName=[NSString stringWithFormat:@"%@%@%@",newAccount.FName,@" ",newAccount.LName];
 
@@ -285,19 +270,29 @@
     return cell;
 }
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AccountInformation *accountInformation = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"AccountInformation"];
-    accountInformation.selectedAccount = [accountsObjects objectAtIndex:indexPath.row];
+    accountInformation.selectedAccount = [_accountsObjects objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:accountInformation animated:NO];
     
 
 }
+*/
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    self.accountTabBarController = (UITabBarController*) [segue destinationViewController];
+    NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+    self.accountInformationController = [self.accountTabBarController.viewControllers objectAtIndex: 0];
+    self.accountInformationController.selectedAccount = [_accountsObjects objectAtIndex:selectedIndex.row];
+    
+}
 -(void) saveAccounts {
     //triggered when all data is loaded
     NSError *e = nil;
-    accountsObjects = [[NSMutableArray alloc] init];
+    _accountsObjects = [[NSMutableArray alloc] init];
     if (e){
         NSLog(@"JSONObjectWithData error: %@", e);
     } else {
@@ -307,9 +302,9 @@
             self.objAccount = [[Account alloc] initWithDictionary:dictionary error:&e];
             
             //The DateReg value needs to be converted to readable format so that when you save it. It's not nill
-            self.objAccount.DateReg = [oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];
+            self.objAccount.DateReg = [_oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];
            
-            [accountsObjects addObject:self.objAccount];
+            [_accountsObjects addObject:self.objAccount];
 
             
             

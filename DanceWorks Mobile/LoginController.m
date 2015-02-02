@@ -17,25 +17,6 @@
 #import "TWTMenuViewController.h"
 #import "TWTMainViewController.h"
 
-@interface LoginController (){
-    Globals *oGlobal;
-}
-
-- (IBAction)btnLogin:(id)sender;
-@property (strong, nonatomic) IBOutlet UISwitch *switchRememberMe;
-@property (strong, nonatomic) IBOutlet UITextField *txtEmail;
-@property (strong, nonatomic) IBOutlet UITextField *txtPassword;
-@property (nonatomic, strong) User *user;
-@property (nonatomic, strong) School *objSchool;
-@property (nonatomic, strong) NSMutableArray *UserArray;
-@property (nonatomic, strong) NSMutableArray *SchoolArray;
-
-@property (nonatomic, strong) TWTSideMenuViewController *sideMenuViewController;
-@property (nonatomic, strong) TWTMenuViewController *menuViewController;
-@property (nonatomic, strong) TWTMainViewController *mainViewController;
-
-@end
-
 
 @implementation LoginController
 
@@ -55,7 +36,7 @@
     BOOL rememberMe = [_switchRememberMe  isOn];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-        oGlobal = [[Globals alloc] init];
+        _oGlobal = [[Globals alloc] init];
         NSMutableDictionary *params = [NSMutableDictionary new];
         //[params setObject:self.txtEmail.text forKey:@"email"];
         //[params setObject:self.txtPassword.text forKey:@"password"];
@@ -65,7 +46,7 @@
         
         NSMutableString *method = [[NSMutableString alloc] init];
         [method setString:@"getUser?"];
-        NSURL *myURL =  [NSURL URLWithString:[oGlobal buildURL:method fromDictionary:params]];
+        NSURL *myURL =  [NSURL URLWithString:[_oGlobal buildURL:method fromDictionary:params]];
         
         NSURLRequest *myRequest = [NSURLRequest requestWithURL:myURL];
         
@@ -117,7 +98,7 @@
                 
                 [method setString:@"getSchool?"];
 
-                NSURL *mySchoolURL =  [NSURL URLWithString:[oGlobal buildURL:method fromDictionary:schoolParams]];
+                NSURL *mySchoolURL =  [NSURL URLWithString:[_oGlobal buildURL:method fromDictionary:schoolParams]];
                 
                 NSURLRequest *mySchoolRequest = [NSURLRequest requestWithURL:mySchoolURL];
 

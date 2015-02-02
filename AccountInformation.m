@@ -10,6 +10,8 @@
 #import "Account.h"
 #import "AccountViewController.h"
 #import "AccountStudentController.h"
+#import "AccountTransactionsController.h"
+
 
 
 @implementation AccountInformation
@@ -23,15 +25,13 @@
     IBOutlet UILabel *txtStatus;
     IBOutlet UILabel *txtAddress;
     IBOutlet UILabel *txtName;
-    //IBOutlet UITabBarItem *tbAcount;
 }
 
 
 -(void) viewDidLoad
 {
     [super viewDidLoad];
-    //[self accountTabBar: self.accountTabBar didSelectItem: [self.accountTabBar.items firstObject]];
-    self.accountTabBar.selectedItem = [self.accountTabBar.items firstObject];
+    self.tabBarController.delegate = self;
     CGFloat scrollViewHeight = 0.0f;
     
     for(UIView* view in scrollView.subviews)
@@ -88,7 +88,7 @@
 
 
     txtName.text = fullName;
-    txtEmail.text = self.selectedAccount.EMail;
+     txtEmail.text = self.selectedAccount.EMail;
     txtPhone.text = self.selectedAccount.Phone;
     txtAddress.text = self.selectedAccount.Address;
     txtCardNumber.text = cardTrail;
@@ -96,34 +96,26 @@
     
    }
 
--(void) tabBar:(UITabBar *) tabBar didSelectItem:(UITabBarItem *)item
-{
-    //This breaks if it is inside one of the cases
-    AccountStudentController *controller = nil;
 
-    switch(item.tag)
-    {
-        case 1:
-            NSLog(@"%d", item.tag);
-            break;
-        case 2:
-            controller = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"AccountStudents"];
-            controller.selectedAccount = self.selectedAccount;
-            [self.navigationController pushViewController:controller animated:YES];
-            break;
-        case 3:
-            NSLog(@"%d", item.tag);
-            break;
-        case 4:
-            NSLog(@"%d", item.tag);
-            break;
-        case 5:
-            NSLog(@"%d", item.tag);
-            break;
-          
-            
-    }
+
+-(BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
     
+    if([viewController isKindOfClass:[AccountStudentController class]])
+    {
+        AccountStudentController *studentController = (AccountStudentController *) viewController;
+        studentController.selectedAccount = self.selectedAccount;
+    }
+    else if([viewController isKindOfClass:[AccountTransactionsController class]])
+    {
+        AccountTransactionsController *transactionsController = (AccountTransactionsController *) viewController;
+        transactionsController.selectedAccount = self.selectedAccount;
+
+    }
+
+    return TRUE;
 }
+
+
 
 @end
