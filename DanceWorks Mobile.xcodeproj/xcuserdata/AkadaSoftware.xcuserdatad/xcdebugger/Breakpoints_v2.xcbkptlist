@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -344,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -360,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
             <Locations>
@@ -375,11 +375,11 @@
                   symbolName = "__28-[LoginController btnLogin:]_block_invoke"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "444332681.49067"
+                  timestampString = "446404027.835815"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
                   offsetFromSymbolStart = "4292">
                </Location>
                <Location
@@ -389,25 +389,25 @@
                   symbolName = "__28-[LoginController btnLogin:]_block_invoke"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "444332681.490817"
+                  timestampString = "446404027.83595"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
                   offsetFromSymbolStart = "4304">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__28-[LoginController btnLogin:]_block_invoke164"
+                  symbolName = "__28-[LoginController btnLogin:]_block_invoke166"
                   moduleName = "DanceWorks Mobile"
                   urlString = "file:///Users/AkadaSoftware/Documents/dwo-iOS/DanceWorks%20Mobile/LoginController.m"
-                  timestampString = "444332681.490949"
+                  timestampString = "446404027.836081"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
                   offsetFromSymbolStart = "58">
                </Location>
             </Locations>
@@ -420,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -436,11 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -452,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -498,11 +498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DanceWorks Mobile/LoginController.m"
-            timestampString = "441575728.188956"
+            timestampString = "445192903.653885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
@@ -689,38 +689,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AccountInformation.m"
-            timestampString = "444328816.745591"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-tabBarController:shouldSelectViewController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DanceWorks Mobile/AccountViewController.m"
-            timestampString = "444587560.227572"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AccountTransactionsController.m"
             timestampString = "444331499.960935"
             startingColumnNumber = "9223372036854775807"
@@ -737,12 +705,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AccountInformation.m"
-            timestampString = "444331507.985018"
+            filePath = "DanceWorks Mobile/AppDelegate.m"
+            timestampString = "444931692.289202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DanceWorks Mobile/LoginController.m"
+            timestampString = "444931703.764866"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-btnLogin:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DanceWorks Mobile/LoginController.m"
+            timestampString = "444931724.731699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -753,29 +753,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AccountInformation.m"
-            timestampString = "444331542.052439"
+            filePath = "DanceWorks Mobile/LoginController.m"
+            timestampString = "445554902.555202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-tabBarController:shouldSelectViewController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AccountInformation.m"
-            timestampString = "444331551.507962"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-btnLogin:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

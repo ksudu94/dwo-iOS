@@ -10,13 +10,15 @@
 #import "Account.h"
 #import "AccountStudentController.h"
 #import "AccountTransactions.h"
-@interface AccountInformation : UIViewController <UITabBarControllerDelegate, UIPageViewControllerDataSource>
+#import "EditAccountInformationController.h"
+@interface AccountInformation : UIViewController <UITabBarControllerDelegate, UIPageViewControllerDataSource, EditAccountInformationControllerDelegate>
 
-@property (atomic, retain) Account *selectedAccount;
+@property (nonatomic, retain) Account *selectedAccount;
 
 @property (nonatomic, retain) AccountStudentController *accountStudentsController;
 @property (nonatomic, retain) AccountTransactions *accountTransactionsController;
 @property (strong, nonatomic) UIPageViewController *pageController;
+-(void) setAccountFields;
 
 
 @end

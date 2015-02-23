@@ -19,7 +19,7 @@
 @property (atomic, retain) School *objSchool;
 @property (atomic, retain) Account *objAccount;
 @property (atomic, retain) User *objUser;
-@property (atomic, retain) Account *selectedAccount;
+@property (nonatomic, retain) Account *selectedAccount;
 
 @property (nonatomic, retain) UIBarButtonItem *rightBarButton;
 @property (nonatomic, retain) UIBarButtonItem *leftBarButton;

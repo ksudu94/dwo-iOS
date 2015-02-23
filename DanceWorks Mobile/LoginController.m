@@ -92,7 +92,8 @@
                 
                 NSMutableDictionary *schoolParams = [NSMutableDictionary new];
                 
-                [schoolParams setObject:[NSString stringWithFormat:@"%d", self.user.SchID] forKey:@"SchID"];
+                //[schoolParams setObject:[NSString stringWithFormat:@"%d", self.user.SchID] forKey:@"SchID"];
+                [schoolParams setObject:[NSString stringWithFormat:@"%ld", (long)self.user.SchID] forKey:@"SchID"];
                 [schoolParams setObject:[NSString stringWithFormat:@"%d", UserID]  forKey:@"UserID"];
                 [schoolParams setObject:self.user.UserGUID forKey:@"UserGUID"];
                 

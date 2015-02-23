@@ -17,7 +17,7 @@
 @interface AccountTransactionsController : UIViewController < UITabBarControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 
-@property (atomic, retain) Account *selectedAccount;
+@property (nonatomic, retain) Account *selectedAccount;
 @property (nonatomic, strong) User *User;
 @property (nonatomic, strong) Globals *oGlobals;
 @property (nonatomic, strong) AccountTransactions *selectedAccountTransaction;

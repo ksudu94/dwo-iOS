@@ -11,6 +11,7 @@
 #import "AccountViewController.h"
 #import "AccountStudentController.h"
 #import "AccountTransactionsController.h"
+#import "EditAccountInformationController.h"
 
 
 
@@ -27,7 +28,21 @@
     IBOutlet UILabel *txtName;
 }
 
+- (IBAction)editAccountInformation:(id)sender
+{
+    EditAccountInformationController *editController = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"EditAccountInformation"];
+    editController.selectedAccount = self.selectedAccount;
+    editController.delegate = self;
+    
 
+    [[self navigationController] pushViewController:editController animated:YES];
+}
+
+-(void) addItemViewController:(EditAccountInformationController *)controller didFinishEnteringItem:(Account *)editedAccount
+{
+    self.selectedAccount = editedAccount;
+    [self setAccountFields];
+}
 -(void) viewDidLoad
 {
     [super viewDidLoad];
@@ -41,8 +56,15 @@
     
     [scrollView setContentSize:(CGSizeMake(self.view.frame.size.width, self.view.frame.size.height))];
     scrollView.frame = self.view.frame;
-    NSString *fullName=[NSString stringWithFormat:@"%@%@%@",self.selectedAccount.FName,@" ",self.selectedAccount.LName];
+    [self setAccountFields];
+    
+}
 
+
+-(void) setAccountFields
+{
+    NSString *fullName=[NSString stringWithFormat:@"%@%@%@",self.selectedAccount.FName,@" ",self.selectedAccount.LName];
+    
     switch (self.selectedAccount.Status)
     
     {
@@ -85,19 +107,16 @@
             
     }
     NSString *cardTrail=[NSString stringWithFormat:@"%@%@%@%@%@%@%@%@",self.selectedAccount.CCFName,@" ",self.selectedAccount.CCLName, @"-", self.selectedAccount.CCTrail, @"-", @"Exp. ",self.selectedAccount.CCExpire];
-
-
+    
+    
     txtName.text = fullName;
-     txtEmail.text = self.selectedAccount.EMail;
+    txtEmail.text = self.selectedAccount.EMail;
     txtPhone.text = self.selectedAccount.Phone;
     txtAddress.text = self.selectedAccount.Address;
     txtCardNumber.text = cardTrail;
     
     
-   }
-
-
-
+}
 -(BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     

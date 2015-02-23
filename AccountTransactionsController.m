@@ -110,7 +110,7 @@
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     NSString *formatedDate = [dateFormatter stringFromDate: transactions.TDate ];
     NSString *formattedAmount = [NSString stringWithFormat:@"%.2f", transactions.Amount];
-    NSString *formattedBalance = [NSString stringWithFormat:@"%.2f", transactions.Balance];
+    //NSString *formattedBalance = [NSString stringWithFormat:@"%.2f", transactions.Balance];
 
     
     NSString *firstLine=[NSString stringWithFormat:@"%@%@%@",formatedDate,@" - ",transactions.TDesc];

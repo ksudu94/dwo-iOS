@@ -24,6 +24,7 @@
 		56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F6E1A2D05B700F7074C /* StudentViewController.m */; };
 		56345F721A2D292700F7074C /* AccountInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F711A2D292700F7074C /* AccountInformation.m */; };
 		5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642E1821A3F345100DA2597 /* StudentInformation.m */; };
+		5649BFFE1A801BAD00A30B68 /* EditAccountInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */; };
 		565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */; };
 		565A41BC1A51C23F00F193D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */; };
 		565A41BE1A51C24C00F193D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BD1A51C24C00F193D9 /* UIKit.framework */; };
@@ -111,6 +112,8 @@
 		56345F711A2D292700F7074C /* AccountInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformation.m; sourceTree = "<group>"; };
 		5642E1811A3F345100DA2597 /* StudentInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentInformation.h; sourceTree = "<group>"; };
 		5642E1821A3F345100DA2597 /* StudentInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentInformation.m; sourceTree = "<group>"; };
+		5649BFFC1A801BAD00A30B68 /* EditAccountInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountInformationController.h; sourceTree = "<group>"; };
+		5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountInformationController.m; sourceTree = "<group>"; };
 		565A41B41A51BFD100F193D9 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		565A41B91A51C1A800F193D9 /* TWTMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTMenuViewController.h; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 				56EB7F7A19EF1496005CABF6 /* AccountViewController.m */,
 				560B82191A5F1BE600F4C430 /* AccountTransactionsController.h */,
 				560B821A1A5F1BE600F4C430 /* AccountTransactionsController.m */,
+				5649BFFC1A801BAD00A30B68 /* EditAccountInformationController.h */,
+				5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */,
 			);
 			name = Accounts;
 			sourceTree = "<group>";
@@ -501,7 +506,7 @@
 		566655F419E863A300FEA09E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Akada Software";
 				TargetAttributes = {
 					566655FB19E863A300FEA09E = {
@@ -612,6 +617,7 @@
 				5666566B19E8641800FEA09E /* JSONKeyMapper.m in Sources */,
 				5666566419E8641800FEA09E /* JSONModelArray.m in Sources */,
 				5666566A19E8641800FEA09E /* JSONModel+networking.m in Sources */,
+				5649BFFE1A801BAD00A30B68 /* EditAccountInformationController.m in Sources */,
 				5666560219E863A300FEA09E /* main.m in Sources */,
 				5666566819E8641800FEA09E /* JSONAPI.m in Sources */,
 				56EB74C319FED15A007C5E22 /* LoginController.m in Sources */,
@@ -692,7 +698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -727,7 +733,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -788,6 +794,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DanceWorks MobileTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -803,6 +810,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DanceWorks MobileTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
