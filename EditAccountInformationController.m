@@ -23,7 +23,7 @@
     self.statusPicker.dataSource = self;
     self.statusPicker.delegate = self;
     self.statusArray = @[@"Active",@"Inactive", @"Prospect", @"Deleted"];
-
+    self.navigationItem.leftBarButtonItem.title = @"Back";
     
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -34,8 +34,6 @@
     NSError *e = nil;
     self.selectedUser = [[User alloc] initWithDictionary:dictUser error:&e];
 
-    
-    //[self statusPicker:[self statusPicker] didSelectRow:0 inComponent:0];
     // Do any additional setup after loading the view.
     self.tfFname.text = _selectedAccount.FName;
     self.tfLame.text = _selectedAccount.LName;
@@ -45,6 +43,7 @@
     self.tfZipCode.text = _selectedAccount.ZipCode;
     self.tfPhone.text = _selectedAccount.Phone;
     self.tfEmail.text = _selectedAccount.EMail;
+    [self registerForKeyboardNotifications];
     
 }
 - (IBAction)saveAccountChanges:(id)sender
@@ -91,16 +90,6 @@
         
         
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@Response", operation.responseString);
-            /*self.selectedAccount.FName = [self.tfFname.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.LName = [self.tfLame.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.EMail = [self.tfEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.Address = [self.tfAddress.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.City = [self.tfCity.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.State = [self.tfState.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.ZipCode = [self.tfZipCode.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            self.selectedAccount.Phone = [self.tfPhone.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-             */
             self.selectedAccount.FName = [NSString stringWithFormat:@"%@",self.tfFname.text];
             self.selectedAccount.LName = [NSString stringWithFormat:@"%@",self.tfLame.text];
             self.selectedAccount.EMail = [NSString stringWithFormat:@"%@",self.tfEmail.text];
@@ -183,14 +172,44 @@
     return _statusArray[row];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// Call this method somewhere in your view controller setup code.
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
 }
-*/
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.editAccountScrollView.contentInset = contentInsets;
+    self.editAccountScrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your app might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    //if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+    //    [self.editAccountScrollView scrollRectToVisible:activeField.frame animated:YES];
+    //}
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.editAccountScrollView.contentInset = contentInsets;
+    self.editAccountScrollView.scrollIndicatorInsets = contentInsets;
+}
 
 @end

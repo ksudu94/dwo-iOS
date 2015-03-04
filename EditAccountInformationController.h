@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *tfPhone;
 @property (strong, nonatomic) IBOutlet UITextField *tfEmail;
 @property (strong, nonatomic) IBOutlet UIPickerView *statusPicker;
+@property (strong, nonatomic) IBOutlet UIScrollView *editAccountScrollView;
 
 
 @property (nonatomic, retain) Account *selectedAccount;

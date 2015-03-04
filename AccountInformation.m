@@ -12,6 +12,7 @@
 #import "AccountStudentController.h"
 #import "AccountTransactionsController.h"
 #import "EditAccountInformationController.h"
+#import "EditCreditCardInformation.h"
 
 
 
@@ -38,11 +39,25 @@
     [[self navigationController] pushViewController:editController animated:YES];
 }
 
+- (IBAction)editCreditCardInformation:(id)sender
+{
+    EditCreditCardInformation *editCreditCardController = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"EditCreditCardInformation"];
+    editCreditCardController.selectedAccount = self.selectedAccount;
+    editCreditCardController.delegate = self;
+    
+    
+    [[self navigationController] pushViewController:editCreditCardController animated:YES];
+}
+
+
 -(void) addItemViewController:(EditAccountInformationController *)controller didFinishEnteringItem:(Account *)editedAccount
 {
     self.selectedAccount = editedAccount;
     [self setAccountFields];
 }
+
+
+
 -(void) viewDidLoad
 {
     [super viewDidLoad];

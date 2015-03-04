@@ -23,6 +23,7 @@
 		561AAD401A0D640B00269F18 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD3F1A0D640B00269F18 /* School.m */; };
 		56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F6E1A2D05B700F7074C /* StudentViewController.m */; };
 		56345F721A2D292700F7074C /* AccountInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F711A2D292700F7074C /* AccountInformation.m */; };
+		5642BC761AA1013700A4BEB2 /* EditCreditCardInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */; };
 		5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642E1821A3F345100DA2597 /* StudentInformation.m */; };
 		5649BFFE1A801BAD00A30B68 /* EditAccountInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */; };
 		565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */; };
@@ -91,7 +92,7 @@
 		560B82281A6079E000F4C430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		560B822A1A64296F00F4C430 /* AccountTransactionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountTransactionsCell.h; path = "DanceWorks Mobile/AccountTransactionsCell.h"; sourceTree = "<group>"; };
 		560B822B1A64296F00F4C430 /* AccountTransactionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTransactionsCell.m; path = "DanceWorks Mobile/AccountTransactionsCell.m"; sourceTree = "<group>"; };
-		560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTransactionCell.xib; sourceTree = "<group>"; };
+		560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AccountTransactionCell.xib; path = ../AccountTransactionCell.xib; sourceTree = "<group>"; };
 		560C247B1A13F82900AAD013 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		560C247C1A13F82900AAD013 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		560C24811A13FC1100AAD013 /* Classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classes.h; sourceTree = "<group>"; };
@@ -110,6 +111,8 @@
 		56345F6E1A2D05B700F7074C /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
 		56345F701A2D292700F7074C /* AccountInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformation.h; sourceTree = "<group>"; };
 		56345F711A2D292700F7074C /* AccountInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformation.m; sourceTree = "<group>"; };
+		5642BC741AA1013700A4BEB2 /* EditCreditCardInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditCreditCardInformation.h; path = "DanceWorks Mobile/EditCreditCardInformation.h"; sourceTree = "<group>"; };
+		5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditCreditCardInformation.m; path = "DanceWorks Mobile/EditCreditCardInformation.m"; sourceTree = "<group>"; };
 		5642E1811A3F345100DA2597 /* StudentInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentInformation.h; sourceTree = "<group>"; };
 		5642E1821A3F345100DA2597 /* StudentInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentInformation.m; sourceTree = "<group>"; };
 		5649BFFC1A801BAD00A30B68 /* EditAccountInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountInformationController.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 		560B82171A5DEA2100F4C430 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
+				5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */,
+				5642BC741AA1013700A4BEB2 /* EditCreditCardInformation.h */,
 				560B822A1A64296F00F4C430 /* AccountTransactionsCell.h */,
 				560B822B1A64296F00F4C430 /* AccountTransactionsCell.m */,
 				560B82111A5AE6BA00F4C430 /* AccountStudentController.h */,
@@ -308,7 +313,6 @@
 		566655F319E863A300FEA09E = {
 			isa = PBXGroup;
 			children = (
-				560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */,
 				566655FE19E863A300FEA09E /* DanceWorks Mobile */,
 				561AAD3D1A0D634F00269F18 /* Controllers */,
 				561AAD3C1A0D631F00269F18 /* Models */,
@@ -342,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				5666560319E863A400FEA09E /* AppDelegate.h */,
+				560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */,
 				560B82271A6079E000F4C430 /* Main.storyboard */,
 				5666560419E863A400FEA09E /* AppDelegate.m */,
 				5666560F19E863A400FEA09E /* Images.xcassets */,
@@ -586,6 +591,7 @@
 				56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */,
 				5684338919EF1D0600A28B52 /* Globals.m in Sources */,
 				56345F721A2D292700F7074C /* AccountInformation.m in Sources */,
+				5642BC761AA1013700A4BEB2 /* EditCreditCardInformation.m in Sources */,
 				56EB7F7E19EF18F9005CABF6 /* User.m in Sources */,
 				561AAD391A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				5666566619E8641800FEA09E /* JSONModelError.m in Sources */,
