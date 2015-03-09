@@ -23,8 +23,11 @@
     self.statusPicker.dataSource = self;
     self.statusPicker.delegate = self;
     self.statusArray = @[@"Active",@"Inactive", @"Prospect", @"Deleted"];
-    self.navigationItem.leftBarButtonItem.title = @"Back";
     
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
+    barButton.title = @"Cancel";
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     

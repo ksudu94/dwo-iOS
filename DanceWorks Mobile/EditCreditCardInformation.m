@@ -20,8 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem.title = @"Back";
-
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
+    barButton.title = @"Cancel";
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
     [self registerForKeyboardNotifications];
 
     self.tfFname.text = _selectedAccount.CCFName;
