@@ -137,7 +137,7 @@
                 
                 [getSchool start];
                 
-                AppDelegate *appDelegateTemp = [[UIApplication sharedApplication]delegate];
+                AppDelegate *appDelegateTemp = (AppDelegate *)[[UIApplication sharedApplication]delegate];
                 appDelegateTemp.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
                 self.menuViewController = [[TWTMenuViewController alloc] initWithNibName:nil bundle:nil];
                 
@@ -146,7 +146,7 @@
                 self.sideMenuViewController.shadowColor = [UIColor blackColor];
                 self.sideMenuViewController.edgeOffset = (UIOffset) { .horizontal = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 18.0f : 0.0f };
                 self.sideMenuViewController.zoomScale = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 0.5634f : 0.85f;
-                self.sideMenuViewController.delegate = self;
+                //self.sideMenuViewController.delegate = self;
                 appDelegateTemp.window.rootViewController = self.sideMenuViewController;
                 
 

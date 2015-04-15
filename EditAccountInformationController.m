@@ -29,14 +29,7 @@
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
     
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    
-    //Pull stored objects from NSUserDefaults as dictionaries
-    NSMutableDictionary *dictUser = [defaults rm_customObjectForKey:@"SavedUser"];
-    
-    NSError *e = nil;
-    self.selectedUser = [[User alloc] initWithDictionary:dictUser error:&e];
-
+   
     // Do any additional setup after loading the view.
     self.tfFname.text = _selectedAccount.FName;
     self.tfLame.text = _selectedAccount.LName;
@@ -47,12 +40,19 @@
     self.tfPhone.text = _selectedAccount.Phone;
     self.tfEmail.text = _selectedAccount.EMail;
     [self registerForKeyboardNotifications];
-    
+
 }
 - (IBAction)saveAccountChanges:(id)sender
 {
     {
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
         
+        //Pull stored objects from NSUserDefaults as dictionaries
+        NSMutableDictionary *dictUser = [defaults rm_customObjectForKey:@"SavedUser"];
+        
+        NSError *e = nil;
+        self.selectedUser = [[User alloc] initWithDictionary:dictUser error:&e];
+
         NSMutableDictionary *params = [NSMutableDictionary new];
         
         [params setObject:[NSString stringWithFormat:@"%d", self.selectedAccount.AcctID] forKey:@"AcctID"];
@@ -72,9 +72,7 @@
         [params setObject:[NSString stringWithFormat:@"%d", self.selectedAccount.TuitionSel] forKey:@"TuitionSel"];
         [params setObject:[NSString stringWithFormat:@"%d", TRUE] forKey:@"checkName"];
         [params setObject:[NSString stringWithFormat:@"%d", self.selectedUser.UserID] forKey:@"UserID"];
-        //NSLog(@"%@", self.selectedUser.UserGUID);
-        [params setObject:[NSString stringWithFormat:@"9669ce7a-eec7-42fc-9bb2-af9d46c85e91"] forKey:@"UserGUID"];
-        //[params setObject:self.selectedUser.UserGUID forKey:@"UserGUID"];
+        [params setObject:self.selectedUser.UserGUID forKey:@"UserGUID"];
 
         NSMutableString *saveAccountMethod = [[NSMutableString alloc] init];
         [saveAccountMethod setString:@"saveAccountInformation?"];
@@ -93,19 +91,34 @@
         
         
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            self.selectedAccount.FName = [NSString stringWithFormat:@"%@",self.tfFname.text];
-            self.selectedAccount.LName = [NSString stringWithFormat:@"%@",self.tfLame.text];
-            self.selectedAccount.EMail = [NSString stringWithFormat:@"%@",self.tfEmail.text];
-            self.selectedAccount.Address = [NSString stringWithFormat:@"%@",self.tfAddress.text];
-            self.selectedAccount.City = [NSString stringWithFormat:@"%@",self.tfCity.text];
-            self.selectedAccount.State = [NSString stringWithFormat:@"%@",self.tfState.text];
-            self.selectedAccount.ZipCode = [NSString stringWithFormat:@"%@",self.tfZipCode.text];
-            self.selectedAccount.Phone = [NSString stringWithFormat:@"%@",self.tfPhone.text];
-            self.selectedAccount.Status = intStatus;
+            NSString *strResponse = [operation.responseString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            if([strResponse isEqualToString:@"Changes saved"])
+            {
+                self.selectedAccount.FName = [NSString stringWithFormat:@"%@",self.tfFname.text];
+                self.selectedAccount.LName = [NSString stringWithFormat:@"%@",self.tfLame.text];
+                self.selectedAccount.EMail = [NSString stringWithFormat:@"%@",self.tfEmail.text];
+                self.selectedAccount.Address = [NSString stringWithFormat:@"%@",self.tfAddress.text];
+                self.selectedAccount.City = [NSString stringWithFormat:@"%@",self.tfCity.text];
+                self.selectedAccount.State = [NSString stringWithFormat:@"%@",self.tfState.text];
+                self.selectedAccount.ZipCode = [NSString stringWithFormat:@"%@",self.tfZipCode.text];
+                self.selectedAccount.Phone = [NSString stringWithFormat:@"%@",self.tfPhone.text];
+                self.selectedAccount.Status = intStatus;
+                
+                [self.delegate addItemViewController:self didFinishEnteringItem:self.selectedAccount];
+                [self.navigationController popViewControllerAnimated:YES];
+
+            }
+            else
+            {
+                NSError *saveAccountError = nil;
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Failed to save Account Information. Please try again."
+                                                                    message:[saveAccountError localizedDescription]
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"Ok"
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
             
-            [self.delegate addItemViewController:self didFinishEnteringItem:self.selectedAccount];
-            [self.navigationController popViewControllerAnimated:YES];
-        
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
@@ -125,6 +138,10 @@
 
     }
 }
+
+/**
+ * Convert status to int value
+ */
 -(int) getStatus:(NSString *) status
 {
     int intStatus;

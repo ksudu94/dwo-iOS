@@ -54,4 +54,12 @@
     return [[NSString stringWithFormat:@"%@",tempStr] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
+- (NSString *) getTime {
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd-MM-YYYY "];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    return  dateString;
+}
+
 @end

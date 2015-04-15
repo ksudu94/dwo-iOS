@@ -12,9 +12,9 @@
 #import "Account.h"
 #import "AccountTransactions.h"
 #import "AccountTransactionsCell.h"
+#import "PaymentViewController.h"
 
-
-@interface AccountTransactionsController : UIViewController < UITabBarControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface AccountTransactionsController : UIViewController < UITabBarControllerDelegate, UITableViewDataSource, UITableViewDelegate, PaymentViewControllerDelegate>
 
 
 @property (nonatomic, retain) Account *selectedAccount;
@@ -29,3 +29,5 @@
 @property (nonatomic, strong) NSDictionary *data;
 
 @end
+
+

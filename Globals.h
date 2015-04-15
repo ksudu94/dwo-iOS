@@ -17,4 +17,5 @@
 
 -(NSString *) URLEncodeString:(NSString *) str;
 
+- (NSString *) getTime;
 @end

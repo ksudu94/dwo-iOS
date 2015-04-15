@@ -26,6 +26,11 @@
 		5642BC761AA1013700A4BEB2 /* EditCreditCardInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */; };
 		5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642E1821A3F345100DA2597 /* StudentInformation.m */; };
 		5649BFFE1A801BAD00A30B68 /* EditAccountInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */; };
+		5654C1C41AD2E507001EFDA9 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1C31AD2E507001EFDA9 /* PaymentViewController.m */; };
+		5654C1C71AD2E519001EFDA9 /* ChargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1C61AD2E519001EFDA9 /* ChargeViewController.m */; };
+		5654C1CD1AD2ECC9001EFDA9 /* questoinMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5654C1CC1AD2ECC9001EFDA9 /* questoinMark.png */; };
+		5654C1CF1AD58A51001EFDA9 /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5654C1CE1AD58A51001EFDA9 /* wallet.png */; };
+		5654C1D21ADC213B001EFDA9 /* ModalCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1D11ADC213B001EFDA9 /* ModalCreditCard.m */; };
 		565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */; };
 		565A41BC1A51C23F00F193D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */; };
 		565A41BE1A51C24C00F193D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BD1A51C24C00F193D9 /* UIKit.framework */; };
@@ -117,6 +122,14 @@
 		5642E1821A3F345100DA2597 /* StudentInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentInformation.m; sourceTree = "<group>"; };
 		5649BFFC1A801BAD00A30B68 /* EditAccountInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountInformationController.h; sourceTree = "<group>"; };
 		5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountInformationController.m; sourceTree = "<group>"; };
+		5654C1C21AD2E507001EFDA9 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		5654C1C31AD2E507001EFDA9 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		5654C1C51AD2E519001EFDA9 /* ChargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeViewController.h; sourceTree = "<group>"; };
+		5654C1C61AD2E519001EFDA9 /* ChargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeViewController.m; sourceTree = "<group>"; };
+		5654C1CC1AD2ECC9001EFDA9 /* questoinMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = questoinMark.png; sourceTree = "<group>"; };
+		5654C1CE1AD58A51001EFDA9 /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
+		5654C1D01ADC213B001EFDA9 /* ModalCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalCreditCard.h; sourceTree = "<group>"; };
+		5654C1D11ADC213B001EFDA9 /* ModalCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalCreditCard.m; sourceTree = "<group>"; };
 		565A41B41A51BFD100F193D9 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		565A41B91A51C1A800F193D9 /* TWTMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTMenuViewController.h; sourceTree = "<group>"; };
@@ -233,6 +246,12 @@
 				560B821A1A5F1BE600F4C430 /* AccountTransactionsController.m */,
 				5649BFFC1A801BAD00A30B68 /* EditAccountInformationController.h */,
 				5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */,
+				5654C1C21AD2E507001EFDA9 /* PaymentViewController.h */,
+				5654C1C31AD2E507001EFDA9 /* PaymentViewController.m */,
+				5654C1C51AD2E519001EFDA9 /* ChargeViewController.h */,
+				5654C1C61AD2E519001EFDA9 /* ChargeViewController.m */,
+				5654C1D01ADC213B001EFDA9 /* ModalCreditCard.h */,
+				5654C1D11ADC213B001EFDA9 /* ModalCreditCard.m */,
 			);
 			name = Accounts;
 			sourceTree = "<group>";
@@ -324,6 +343,8 @@
 				565A41BD1A51C24C00F193D9 /* UIKit.framework */,
 				565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */,
 				56EB7F6819EC84EA005CABF6 /* LaunchImage.png */,
+				5654C1CC1AD2ECC9001EFDA9 /* questoinMark.png */,
+				5654C1CE1AD58A51001EFDA9 /* wallet.png */,
 				56CF6CD31A52030E003772DD /* galaxy.png */,
 				5666568E19E8750A00FEA09E /* CFNetwork.framework */,
 				5666568F19E8750A00FEA09E /* MobileCoreServices.framework */,
@@ -567,7 +588,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				560B82291A6079E000F4C430 /* Main.storyboard in Resources */,
+				5654C1CF1AD58A51001EFDA9 /* wallet.png in Resources */,
 				5666561019E863A400FEA09E /* Images.xcassets in Resources */,
+				5654C1CD1AD2ECC9001EFDA9 /* questoinMark.png in Resources */,
 				56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */,
 				56CF6CD41A52030E003772DD /* galaxy.png in Resources */,
 				560B82301A642ACC00F4C430 /* AccountTransactionCell.xib in Resources */,
@@ -590,6 +613,7 @@
 			files = (
 				56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */,
 				5684338919EF1D0600A28B52 /* Globals.m in Sources */,
+				5654C1D21ADC213B001EFDA9 /* ModalCreditCard.m in Sources */,
 				56345F721A2D292700F7074C /* AccountInformation.m in Sources */,
 				5642BC761AA1013700A4BEB2 /* EditCreditCardInformation.m in Sources */,
 				56EB7F7E19EF18F9005CABF6 /* User.m in Sources */,
@@ -605,6 +629,7 @@
 				560C247D1A13F82900AAD013 /* Student.m in Sources */,
 				5666566F19E8740400FEA09E /* Account.m in Sources */,
 				5666568719E874AF00FEA09E /* AFNetworkReachabilityManager.m in Sources */,
+				5654C1C71AD2E519001EFDA9 /* ChargeViewController.m in Sources */,
 				560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */,
 				561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */,
 				560B821E1A6031C100F4C430 /* AccountTransactions.m in Sources */,
@@ -631,6 +656,7 @@
 				5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */,
 				561AAD401A0D640B00269F18 /* School.m in Sources */,
 				5666566C19E8641800FEA09E /* JSONValueTransformer.m in Sources */,
+				5654C1C41AD2E507001EFDA9 /* PaymentViewController.m in Sources */,
 				560B822C1A64296F00F4C430 /* AccountTransactionsCell.m in Sources */,
 				5666568819E874AF00FEA09E /* AFSecurityPolicy.m in Sources */,
 				5666566919E8641800FEA09E /* JSONHTTPClient.m in Sources */,

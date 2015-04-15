@@ -13,6 +13,9 @@
 #import "NSUserDefaults+RMSaveCustomObject.h"
 #import "AccountTransactions.h"
 #import "AccountTransactionsCell.h"
+#import "PaymentViewController.h"
+#import "ChargeViewController.h"
+
 
 @implementation AccountTransactionsController
 
@@ -110,14 +113,10 @@
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     NSString *formatedDate = [dateFormatter stringFromDate: transactions.TDate ];
     NSString *formattedAmount = [NSString stringWithFormat:@"%.2f", transactions.Amount];
-    //NSString *formattedBalance = [NSString stringWithFormat:@"%.2f", transactions.Balance];
-
     
     NSString *firstLine=[NSString stringWithFormat:@"%@%@%@",formatedDate,@" - ",transactions.TDesc];
     NSString *strAmount=[NSString stringWithFormat:@"%@%@",@"Amount - $ ",formattedAmount];
 
-    //self.selectedTransactionCell.dateLabel.text = formatedDate;
-    //self.selectedTransactionCell.typeLabel.text = transactions.Type;
     self.selectedTransactionCell.descLabel.text = firstLine;
     [self.selectedTransactionCell.descLabel sizeToFit ];
     self.selectedTransactionCell.amountLabel.text = strAmount;
@@ -158,7 +157,6 @@
 -(void) saveTransactions
 {
     //triggered when all data is loaded
-
     NSError *e = nil;
     self.transactionsObject = [[NSMutableArray alloc] init];
     
@@ -207,19 +205,51 @@
     
 }
 
+/**
+ * Use the selected account and account transaction object to prefil the enter payment screen. This is done a little differently from 
+ *other places where we switch view controllers b/c the user is selecting a transaction object from the table instead of selecting the
+ * tabs at the bottom. So we instantiate the view controller based off of the tab bar controller and not the navigation controller. 
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PaymentViewController *paymentController = [self.tabBarController.viewControllers objectAtIndex:3];
+    AccountTransactions *transaction = [self.transactionsObject objectAtIndex: indexPath.row];
+    
+    paymentController.selectedAccount = self.selectedAccount;
+    paymentController.selectedAccountTransaction = transaction;
+    paymentController.delegate = self;
+    [self.tabBarController setSelectedIndex:3];
+
+}
+
+/**
+ * Switching inbetween tabs
+ */
 -(BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     
-    if([viewController isKindOfClass:[AccountInformation class]])
-    {
-        AccountInformation *informationController = (AccountInformation *) viewController;
-        informationController.selectedAccount = self.selectedAccount;
-        
-    }
-    else if([viewController isKindOfClass:[AccountStudentController class]])
+    if([viewController isKindOfClass:[AccountStudentController class]])
     {
         AccountStudentController *studentController = (AccountStudentController *) viewController;
         studentController.selectedAccount = self.selectedAccount;
+    }
+    else if([viewController isKindOfClass:[AccountTransactionsController class]])
+    {
+        AccountTransactionsController *transactionsController = (AccountTransactionsController *) viewController;
+        transactionsController.selectedAccount = self.selectedAccount;
+        
+    }
+    else if([viewController isKindOfClass:[PaymentViewController class]])
+    {
+        PaymentViewController *paymentController = (PaymentViewController *) viewController;
+        paymentController.selectedAccount = self.selectedAccount;
+        
+    }
+    else if([viewController isKindOfClass:[ChargeViewController class]])
+    {
+        ChargeViewController *chargeController = (ChargeViewController *) viewController;
+        chargeController.selectedAccount = self.selectedAccount;
+        
     }
     
     return TRUE;

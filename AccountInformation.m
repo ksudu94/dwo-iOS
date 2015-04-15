@@ -13,7 +13,8 @@
 #import "AccountTransactionsController.h"
 #import "EditAccountInformationController.h"
 #import "EditCreditCardInformation.h"
-
+#import "PaymentViewController.h"
+#import "ChargeViewController.h"
 
 
 @implementation AccountInformation
@@ -44,7 +45,7 @@
     EditCreditCardInformation *editCreditCardController = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"EditCreditCardInformation"];
     
     editCreditCardController.selectedAccount = self.selectedAccount;
-    editCreditCardController.delegate = self;
+    //editCreditCardController.delegate = self;
     
     
     [[self navigationController] pushViewController:editCreditCardController animated:YES];
@@ -146,6 +147,18 @@
         AccountTransactionsController *transactionsController = (AccountTransactionsController *) viewController;
         transactionsController.selectedAccount = self.selectedAccount;
 
+    }
+    else if([viewController isKindOfClass:[PaymentViewController class]])
+    {
+        PaymentViewController *paymentController = (PaymentViewController *) viewController;
+        paymentController.selectedAccount = self.selectedAccount;
+        
+    }
+    else if([viewController isKindOfClass:[ChargeViewController class]])
+    {
+        ChargeViewController *chargeController = (ChargeViewController *) viewController;
+        chargeController.selectedAccount = self.selectedAccount;
+        
     }
 
     return TRUE;

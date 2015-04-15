@@ -12,7 +12,8 @@
 #import "AFNetworking.h"
 #import "Student.h"
 #import "AccountTransactionsController.h"
-
+#import "PaymentViewController.h"
+#import "ChargeViewController.h"
 
 
 @implementation AccountStudentController
@@ -150,16 +151,29 @@
 
 -(BOOL) tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    if([viewController isKindOfClass:[AccountInformation class]])
+    
+    if([viewController isKindOfClass:[AccountStudentController class]])
     {
-        AccountInformation *informationController = (AccountInformation *) viewController;
-        informationController.selectedAccount = self.selectedAccount;
-        
+        AccountStudentController *studentController = (AccountStudentController *) viewController;
+        studentController.selectedAccount = self.selectedAccount;
     }
     else if([viewController isKindOfClass:[AccountTransactionsController class]])
     {
         AccountTransactionsController *transactionsController = (AccountTransactionsController *) viewController;
         transactionsController.selectedAccount = self.selectedAccount;
+        
+    }
+    else if([viewController isKindOfClass:[PaymentViewController class]])
+    {
+        PaymentViewController *paymentController = (PaymentViewController *) viewController;
+        paymentController.selectedAccount = self.selectedAccount;
+        
+    }
+    else if([viewController isKindOfClass:[ChargeViewController class]])
+    {
+        ChargeViewController *chargeController = (ChargeViewController *) viewController;
+        chargeController.selectedAccount = self.selectedAccount;
+        
     }
     
     return TRUE;

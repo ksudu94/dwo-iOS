@@ -23,6 +23,7 @@
 
 -(void) viewDidLoad
 {
+    [super viewDidLoad];
     NSString *fullName=[NSString stringWithFormat:@"%@%@%@",self.selectedStudent.FName,@" ",self.selectedStudent.LName];
 
     txtStudentName.text = fullName;

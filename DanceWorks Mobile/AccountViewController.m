@@ -300,6 +300,7 @@
         {
             //Create account for every response
             self.objAccount = [[Account alloc] initWithDictionary:dictionary error:&e];
+            //NSLog(self.objAccount.FName);
             
             //The DateReg value needs to be converted to readable format so that when you save it. It's not nill
             self.objAccount.DateReg = [_oGlobal getDateFromJSON:[dictionary objectForKey:@"DateReg"]];

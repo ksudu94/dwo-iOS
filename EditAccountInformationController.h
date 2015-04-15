@@ -35,7 +35,7 @@
 @property (nonatomic, retain) Account *selectedAccount;
 @property (nonatomic, strong) User *selectedUser;
 @property (nonatomic, strong) Globals *oGlobals;
-@property(atomic, strong) NSString* strStatus;
 
+@property(atomic, strong) NSString* strStatus;
 @property (atomic, retain) NSArray *statusArray;
 @end

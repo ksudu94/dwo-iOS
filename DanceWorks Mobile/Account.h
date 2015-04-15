@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Akada Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "JSONModel.h"
+#import "NSObject+RMArchivable.h"
+#import "RMMapper.h"
 
-@interface Account : JSONModel
+@interface Account : JSONModel <RMMapping>
 {
     //Generally for instance variables but those will be stored in .m file
 }
