@@ -20,6 +20,7 @@
 
 @interface EditAccountInformationController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, weak) id <EditAccountInformationControllerDelegate> delegate;
+
 @property (strong, nonatomic) IBOutlet UITextField *tfFname;
 @property (strong, nonatomic) IBOutlet UITextField *tfLame;
 @property (strong, nonatomic) IBOutlet UITextField *tfAddress;

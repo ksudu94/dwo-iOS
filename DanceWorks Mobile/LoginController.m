@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -38,10 +38,10 @@
 
         _oGlobal = [[Globals alloc] init];
         NSMutableDictionary *params = [NSMutableDictionary new];
-        //[params setObject:self.txtEmail.text forKey:@"email"];
-        //[params setObject:self.txtPassword.text forKey:@"password"];
-        [params setObject:@"kyle@akadasoftware.com" forKey:@"email"];
-        [params setObject:@"akada" forKey:@"password"];
+        [params setObject:_txtEmail.text forKey:@"email"];
+        [params setObject:_txtPassword.text forKey:@"password"];
+        //[params setObject:@"kyle@akadasoftware.com" forKey:@"email"];
+        //[params setObject:@"akada" forKey:@"password"];
     
         
         NSMutableString *method = [[NSMutableString alloc] init];

@@ -39,7 +39,11 @@
     self.tfZipCode.text = _selectedAccount.ZipCode;
     self.tfPhone.text = _selectedAccount.Phone;
     self.tfEmail.text = _selectedAccount.EMail;
+    
     [self registerForKeyboardNotifications];
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
+    
+    
 
 }
 - (IBAction)saveAccountChanges:(id)sender
@@ -177,6 +181,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ * Picker view methods that do stuff
+ */
 -(int) numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
@@ -208,28 +215,31 @@
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight ) {
+        CGSize origKeySize = kbSize;
+        kbSize.height = origKeySize.width;
+        kbSize.width = origKeySize.height;
+    }
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    self.editAccountScrollView.contentInset = contentInsets;
-    self.editAccountScrollView.scrollIndicatorInsets = contentInsets;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height + 20, 0.0);
+    _editAccountScrollView.contentInset = contentInsets;
+    _editAccountScrollView.scrollIndicatorInsets = contentInsets;
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    //if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
-    //    [self.editAccountScrollView scrollRectToVisible:activeField.frame animated:YES];
-    //}
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    self.editAccountScrollView.contentInset = contentInsets;
-    self.editAccountScrollView.scrollIndicatorInsets = contentInsets;
+    _editAccountScrollView.contentInset = contentInsets;
+    _editAccountScrollView.scrollIndicatorInsets = contentInsets;
 }
 
 @end

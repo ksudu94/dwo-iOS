@@ -31,8 +31,8 @@
     NSMutableDictionary *dictSchool = [defaults rm_customObjectForKey:@"SavedSchool"];
     
     NSError *e = nil;
-    self.user = [[User alloc] initWithDictionary:dictUser error:&e];
-    self.school = [[School alloc] initWithDictionary:dictSchool error:&e];
+    self.User = [[User alloc] initWithDictionary:dictUser error:&e];
+    self.School = [[School alloc] initWithDictionary:dictSchool error:&e];
     self.oGlobals = [[Globals alloc] init];
     
     self.leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backToList)];

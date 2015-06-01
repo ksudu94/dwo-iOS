@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5601FE431B0D324700628453 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 5601FE421B0D324700628453 /* Session.m */; };
 		560B82131A5AE6BA00F4C430 /* AccountStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B82121A5AE6BA00F4C430 /* AccountStudentController.m */; };
 		560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B82151A5AE71B00F4C430 /* StudentClassesController.m */; };
 		560B821B1A5F1BE600F4C430 /* AccountTransactionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560B821A1A5F1BE600F4C430 /* AccountTransactionsController.m */; };
@@ -21,16 +22,30 @@
 		561AAD391A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD341A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m */; };
 		561AAD3A1A0AC5C200269F18 /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD361A0AC5C200269F18 /* RMMapper.m */; };
 		561AAD401A0D640B00269F18 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AAD3F1A0D640B00269F18 /* School.m */; };
+		562C6FA71B1CA8AD00B403FD /* CheckConflictsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562C6FA61B1CA8AD00B403FD /* CheckConflictsViewController.m */; };
+		562F8E731B0A4A7F007BB7C5 /* EditStudentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 562F8E721B0A4A7F007BB7C5 /* EditStudentInformation.m */; };
 		56345F6F1A2D05B700F7074C /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F6E1A2D05B700F7074C /* StudentViewController.m */; };
 		56345F721A2D292700F7074C /* AccountInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56345F711A2D292700F7074C /* AccountInformation.m */; };
 		5642BC761AA1013700A4BEB2 /* EditCreditCardInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */; };
 		5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5642E1821A3F345100DA2597 /* StudentInformation.m */; };
+		5648CB6C1B16118900BF86DC /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648CB651B16118900BF86DC /* downArrow.png */; };
+		5648CB6D1B16118900BF86DC /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648CB661B16118900BF86DC /* downArrow@2x.png */; };
+		5648CB6E1B16118900BF86DC /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648CB671B16118900BF86DC /* downArrow@3x.png */; };
+		5648CB6F1B16118900BF86DC /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648CB691B16118900BF86DC /* DownPicker.m */; };
+		5648CB701B16118900BF86DC /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648CB6B1B16118900BF86DC /* UIDownPicker.m */; };
+		5648CB7A1B16283E00BF86DC /* StudentClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648CB791B16283E00BF86DC /* StudentClasses.m */; };
+		5648CB7E1B16662A00BF86DC /* EnrollStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648CB7D1B16662A00BF86DC /* EnrollStudentViewController.m */; };
+		5648CB811B167F5600BF86DC /* SchoolClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648CB801B167F5600BF86DC /* SchoolClasses.m */; };
+		5648CB871B177E7200BF86DC /* ClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5648CB861B177E7200BF86DC /* ClassCell.xib */; };
+		5648CB8A1B177F0800BF86DC /* ClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5648CB891B177F0800BF86DC /* ClassCell.m */; };
 		5649BFFE1A801BAD00A30B68 /* EditAccountInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */; };
 		5654C1C41AD2E507001EFDA9 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1C31AD2E507001EFDA9 /* PaymentViewController.m */; };
 		5654C1C71AD2E519001EFDA9 /* ChargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1C61AD2E519001EFDA9 /* ChargeViewController.m */; };
 		5654C1CD1AD2ECC9001EFDA9 /* questoinMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5654C1CC1AD2ECC9001EFDA9 /* questoinMark.png */; };
 		5654C1CF1AD58A51001EFDA9 /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5654C1CE1AD58A51001EFDA9 /* wallet.png */; };
 		5654C1D21ADC213B001EFDA9 /* ModalCreditCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1D11ADC213B001EFDA9 /* ModalCreditCard.m */; };
+		5654C1D41AE82E66001EFDA9 /* currency.png in Resources */ = {isa = PBXBuildFile; fileRef = 5654C1D31AE82E66001EFDA9 /* currency.png */; };
+		5654C1D81AEAC78E001EFDA9 /* StudentWaitList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5654C1D71AEAC78E001EFDA9 /* StudentWaitList.m */; };
 		565A41B61A51BFD100F193D9 /* TWTSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */; };
 		565A41BC1A51C23F00F193D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BB1A51C23F00F193D9 /* CoreGraphics.framework */; };
 		565A41BE1A51C24C00F193D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565A41BD1A51C24C00F193D9 /* UIKit.framework */; };
@@ -73,6 +88,8 @@
 		56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EB7F6819EC84EA005CABF6 /* LaunchImage.png */; };
 		56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB7F7A19EF1496005CABF6 /* AccountViewController.m */; };
 		56EB7F7E19EF18F9005CABF6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EB7F7D19EF18F9005CABF6 /* User.m */; };
+		56FC28311AEADB7800E00129 /* ChargeCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FC28301AEADB7800E00129 /* ChargeCodes.m */; };
+		E0D95289A334F5D83A9DDDFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B92A6104DC75269D48F5FC /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +103,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F80FEAE03E4430823F958EE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5601FE411B0D324100628453 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		5601FE421B0D324700628453 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		560B82111A5AE6BA00F4C430 /* AccountStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountStudentController.h; sourceTree = "<group>"; };
 		560B82121A5AE6BA00F4C430 /* AccountStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountStudentController.m; sourceTree = "<group>"; };
 		560B82141A5AE71B00F4C430 /* StudentClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentClassesController.h; path = "DanceWorks Mobile/StudentClassesController.h"; sourceTree = "<group>"; };
@@ -112,6 +132,10 @@
 		561AAD361A0AC5C200269F18 /* RMMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapper.m; sourceTree = "<group>"; };
 		561AAD3E1A0D640B00269F18 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
 		561AAD3F1A0D640B00269F18 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
+		561E48811B05375D00D7C9A9 /* EditStudentInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditStudentInformation.h; sourceTree = "<group>"; };
+		562C6FA51B1CA8AD00B403FD /* CheckConflictsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConflictsViewController.h; sourceTree = "<group>"; };
+		562C6FA61B1CA8AD00B403FD /* CheckConflictsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConflictsViewController.m; sourceTree = "<group>"; };
+		562F8E721B0A4A7F007BB7C5 /* EditStudentInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditStudentInformation.m; sourceTree = "<group>"; };
 		56345F6D1A2D05B700F7074C /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
 		56345F6E1A2D05B700F7074C /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
 		56345F701A2D292700F7074C /* AccountInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformation.h; sourceTree = "<group>"; };
@@ -120,6 +144,22 @@
 		5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditCreditCardInformation.m; path = "DanceWorks Mobile/EditCreditCardInformation.m"; sourceTree = "<group>"; };
 		5642E1811A3F345100DA2597 /* StudentInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentInformation.h; sourceTree = "<group>"; };
 		5642E1821A3F345100DA2597 /* StudentInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentInformation.m; sourceTree = "<group>"; };
+		5648CB651B16118900BF86DC /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
+		5648CB661B16118900BF86DC /* downArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@2x.png"; sourceTree = "<group>"; };
+		5648CB671B16118900BF86DC /* downArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@3x.png"; sourceTree = "<group>"; };
+		5648CB681B16118900BF86DC /* DownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownPicker.h; sourceTree = "<group>"; };
+		5648CB691B16118900BF86DC /* DownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownPicker.m; sourceTree = "<group>"; };
+		5648CB6A1B16118900BF86DC /* UIDownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDownPicker.h; sourceTree = "<group>"; };
+		5648CB6B1B16118900BF86DC /* UIDownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDownPicker.m; sourceTree = "<group>"; };
+		5648CB781B16283E00BF86DC /* StudentClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentClasses.h; sourceTree = "<group>"; };
+		5648CB791B16283E00BF86DC /* StudentClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentClasses.m; sourceTree = "<group>"; };
+		5648CB7C1B16662A00BF86DC /* EnrollStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollStudentViewController.h; sourceTree = "<group>"; };
+		5648CB7D1B16662A00BF86DC /* EnrollStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollStudentViewController.m; sourceTree = "<group>"; };
+		5648CB7F1B167F5600BF86DC /* SchoolClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolClasses.h; sourceTree = "<group>"; };
+		5648CB801B167F5600BF86DC /* SchoolClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolClasses.m; sourceTree = "<group>"; };
+		5648CB861B177E7200BF86DC /* ClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassCell.xib; sourceTree = "<group>"; };
+		5648CB881B177F0800BF86DC /* ClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCell.h; sourceTree = "<group>"; };
+		5648CB891B177F0800BF86DC /* ClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCell.m; sourceTree = "<group>"; };
 		5649BFFC1A801BAD00A30B68 /* EditAccountInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountInformationController.h; sourceTree = "<group>"; };
 		5649BFFD1A801BAD00A30B68 /* EditAccountInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountInformationController.m; sourceTree = "<group>"; };
 		5654C1C21AD2E507001EFDA9 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
@@ -130,6 +170,9 @@
 		5654C1CE1AD58A51001EFDA9 /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
 		5654C1D01ADC213B001EFDA9 /* ModalCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalCreditCard.h; sourceTree = "<group>"; };
 		5654C1D11ADC213B001EFDA9 /* ModalCreditCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalCreditCard.m; sourceTree = "<group>"; };
+		5654C1D31AE82E66001EFDA9 /* currency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currency.png; sourceTree = "<group>"; };
+		5654C1D61AEAC78E001EFDA9 /* StudentWaitList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentWaitList.h; sourceTree = "<group>"; };
+		5654C1D71AEAC78E001EFDA9 /* StudentWaitList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentWaitList.m; sourceTree = "<group>"; };
 		565A41B41A51BFD100F193D9 /* TWTSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTSideMenuViewController.h; sourceTree = "<group>"; };
 		565A41B51A51BFD100F193D9 /* TWTSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTSideMenuViewController.m; sourceTree = "<group>"; };
 		565A41B91A51C1A800F193D9 /* TWTMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWTMenuViewController.h; sourceTree = "<group>"; };
@@ -195,6 +238,7 @@
 		5666569019E8750A00FEA09E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5684338719EF1D0600A28B52 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		5684338819EF1D0600A28B52 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		56B92A6104DC75269D48F5FC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CF6CD31A52030E003772DD /* galaxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxy.png; sourceTree = "<group>"; };
 		56EB74C119FED15A007C5E22 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = "DanceWorks Mobile/LoginController.h"; sourceTree = "<group>"; };
 		56EB74C219FED15A007C5E22 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = "DanceWorks Mobile/LoginController.m"; sourceTree = "<group>"; };
@@ -203,6 +247,9 @@
 		56EB7F7A19EF1496005CABF6 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = "DanceWorks Mobile/AccountViewController.m"; sourceTree = "<group>"; };
 		56EB7F7C19EF18F9005CABF6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		56EB7F7D19EF18F9005CABF6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		56FC282F1AEADB7800E00129 /* ChargeCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChargeCodes.h; sourceTree = "<group>"; };
+		56FC28301AEADB7800E00129 /* ChargeCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeCodes.m; sourceTree = "<group>"; };
+		9ECF5686C46C5E7943FF4333 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +263,7 @@
 				5666569119E8750A00FEA09E /* CFNetwork.framework in Frameworks */,
 				5666569219E8750A00FEA09E /* MobileCoreServices.framework in Frameworks */,
 				5666569319E8750A00FEA09E /* SystemConfiguration.framework in Frameworks */,
+				E0D95289A334F5D83A9DDDFD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +280,8 @@
 		560B82171A5DEA2100F4C430 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
+				56EB74C119FED15A007C5E22 /* LoginController.h */,
+				56EB74C219FED15A007C5E22 /* LoginController.m */,
 				5642BC751AA1013700A4BEB2 /* EditCreditCardInformation.m */,
 				5642BC741AA1013700A4BEB2 /* EditCreditCardInformation.h */,
 				560B822A1A64296F00F4C430 /* AccountTransactionsCell.h */,
@@ -265,6 +315,16 @@
 				5642E1821A3F345100DA2597 /* StudentInformation.m */,
 				560B82141A5AE71B00F4C430 /* StudentClassesController.h */,
 				560B82151A5AE71B00F4C430 /* StudentClassesController.m */,
+				5654C1D61AEAC78E001EFDA9 /* StudentWaitList.h */,
+				5654C1D71AEAC78E001EFDA9 /* StudentWaitList.m */,
+				561E48811B05375D00D7C9A9 /* EditStudentInformation.h */,
+				562F8E721B0A4A7F007BB7C5 /* EditStudentInformation.m */,
+				5648CB7C1B16662A00BF86DC /* EnrollStudentViewController.h */,
+				5648CB7D1B16662A00BF86DC /* EnrollStudentViewController.m */,
+				5648CB881B177F0800BF86DC /* ClassCell.h */,
+				5648CB891B177F0800BF86DC /* ClassCell.m */,
+				562C6FA51B1CA8AD00B403FD /* CheckConflictsViewController.h */,
+				562C6FA61B1CA8AD00B403FD /* CheckConflictsViewController.m */,
 			);
 			name = Students;
 			sourceTree = "<group>";
@@ -287,6 +347,16 @@
 		561AAD3C1A0D631F00269F18 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5648CB7F1B167F5600BF86DC /* SchoolClasses.h */,
+				5648CB801B167F5600BF86DC /* SchoolClasses.m */,
+				5648CB781B16283E00BF86DC /* StudentClasses.h */,
+				5648CB791B16283E00BF86DC /* StudentClasses.m */,
+				5601FE421B0D324700628453 /* Session.m */,
+				5601FE411B0D324100628453 /* Session.h */,
+				560C247B1A13F82900AAD013 /* Student.h */,
+				560C247C1A13F82900AAD013 /* Student.m */,
+				56FC282F1AEADB7800E00129 /* ChargeCodes.h */,
+				56FC28301AEADB7800E00129 /* ChargeCodes.m */,
 				560C24811A13FC1100AAD013 /* Classes.h */,
 				560C24821A13FC1100AAD013 /* Classes.m */,
 				560B821C1A6031C100F4C430 /* AccountTransactions.h */,
@@ -299,8 +369,6 @@
 				5666566E19E8740400FEA09E /* Account.m */,
 				561AAD3E1A0D640B00269F18 /* School.h */,
 				561AAD3F1A0D640B00269F18 /* School.m */,
-				560C247B1A13F82900AAD013 /* Student.h */,
-				560C247C1A13F82900AAD013 /* Student.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -310,10 +378,22 @@
 			children = (
 				560B82181A5DEA2700F4C430 /* Students */,
 				560B82171A5DEA2100F4C430 /* Accounts */,
-				56EB74C119FED15A007C5E22 /* LoginController.h */,
-				56EB74C219FED15A007C5E22 /* LoginController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5648CB641B16118900BF86DC /* DownPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5648CB651B16118900BF86DC /* downArrow.png */,
+				5648CB661B16118900BF86DC /* downArrow@2x.png */,
+				5648CB671B16118900BF86DC /* downArrow@3x.png */,
+				5648CB681B16118900BF86DC /* DownPicker.h */,
+				5648CB691B16118900BF86DC /* DownPicker.m */,
+				5648CB6A1B16118900BF86DC /* UIDownPicker.h */,
+				5648CB6B1B16118900BF86DC /* UIDownPicker.m */,
+			);
+			path = DownPicker;
 			sourceTree = "<group>";
 		};
 		565A41B31A51BFD100F193D9 /* TWTSideMenuViewController */ = {
@@ -336,6 +416,7 @@
 				561AAD3D1A0D634F00269F18 /* Controllers */,
 				561AAD3C1A0D631F00269F18 /* Models */,
 				5666561819E863A400FEA09E /* DanceWorks MobileTests */,
+				5648CB641B16118900BF86DC /* DownPicker */,
 				566655FD19E863A300FEA09E /* Products */,
 				565A41B31A51BFD100F193D9 /* TWTSideMenuViewController */,
 				561AAD2E1A0AC5C200269F18 /* RMMapper */,
@@ -345,12 +426,15 @@
 				56EB7F6819EC84EA005CABF6 /* LaunchImage.png */,
 				5654C1CC1AD2ECC9001EFDA9 /* questoinMark.png */,
 				5654C1CE1AD58A51001EFDA9 /* wallet.png */,
+				5654C1D31AE82E66001EFDA9 /* currency.png */,
 				56CF6CD31A52030E003772DD /* galaxy.png */,
 				5666568E19E8750A00FEA09E /* CFNetwork.framework */,
 				5666568F19E8750A00FEA09E /* MobileCoreServices.framework */,
 				5666569019E8750A00FEA09E /* SystemConfiguration.framework */,
 				5666567019E8749200FEA09E /* AFNetworking */,
 				5666564919E8641800FEA09E /* JSONModel */,
+				DB59897135EEEC72EE678DB0 /* Pods */,
+				9CF8AE4E23AB4962DAC0BB2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,6 +452,7 @@
 			children = (
 				5666560319E863A400FEA09E /* AppDelegate.h */,
 				560B822F1A642ACC00F4C430 /* AccountTransactionCell.xib */,
+				5648CB861B177E7200BF86DC /* ClassCell.xib */,
 				560B82271A6079E000F4C430 /* Main.storyboard */,
 				5666560419E863A400FEA09E /* AppDelegate.m */,
 				5666560F19E863A400FEA09E /* Images.xcassets */,
@@ -488,6 +573,23 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
+		9CF8AE4E23AB4962DAC0BB2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56B92A6104DC75269D48F5FC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB59897135EEEC72EE678DB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F80FEAE03E4430823F958EE /* Pods.debug.xcconfig */,
+				9ECF5686C46C5E7943FF4333 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -495,9 +597,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5666561F19E863A400FEA09E /* Build configuration list for PBXNativeTarget "DanceWorks Mobile" */;
 			buildPhases = (
+				AA5F5359CFD3ADE7AD4DE369 /* Check Pods Manifest.lock */,
 				566655F819E863A300FEA09E /* Sources */,
 				566655F919E863A300FEA09E /* Frameworks */,
 				566655FA19E863A300FEA09E /* Resources */,
+				4FEF41C6EEAFFAC59265588E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -589,10 +693,15 @@
 			files = (
 				560B82291A6079E000F4C430 /* Main.storyboard in Resources */,
 				5654C1CF1AD58A51001EFDA9 /* wallet.png in Resources */,
+				5648CB6D1B16118900BF86DC /* downArrow@2x.png in Resources */,
+				5654C1D41AE82E66001EFDA9 /* currency.png in Resources */,
+				5648CB871B177E7200BF86DC /* ClassCell.xib in Resources */,
+				5648CB6C1B16118900BF86DC /* downArrow.png in Resources */,
 				5666561019E863A400FEA09E /* Images.xcassets in Resources */,
 				5654C1CD1AD2ECC9001EFDA9 /* questoinMark.png in Resources */,
 				56EB7F6919EC84EA005CABF6 /* LaunchImage.png in Resources */,
 				56CF6CD41A52030E003772DD /* galaxy.png in Resources */,
+				5648CB6E1B16118900BF86DC /* downArrow@3x.png in Resources */,
 				560B82301A642ACC00F4C430 /* AccountTransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,11 +715,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4FEF41C6EEAFFAC59265588E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA5F5359CFD3ADE7AD4DE369 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		566655F819E863A300FEA09E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5654C1D81AEAC78E001EFDA9 /* StudentWaitList.m in Sources */,
 				56EB7F7B19EF1496005CABF6 /* AccountViewController.m in Sources */,
 				5684338919EF1D0600A28B52 /* Globals.m in Sources */,
 				5654C1D21ADC213B001EFDA9 /* ModalCreditCard.m in Sources */,
@@ -619,22 +762,28 @@
 				56EB7F7E19EF18F9005CABF6 /* User.m in Sources */,
 				561AAD391A0AC5C200269F18 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				5666566619E8641800FEA09E /* JSONModelError.m in Sources */,
+				562C6FA71B1CA8AD00B403FD /* CheckConflictsViewController.m in Sources */,
 				5666566719E8641800FEA09E /* NSArray+JSONModel.m in Sources */,
+				5648CB811B167F5600BF86DC /* SchoolClasses.m in Sources */,
+				56FC28311AEADB7800E00129 /* ChargeCodes.m in Sources */,
 				5666566519E8641800FEA09E /* JSONModelClassProperty.m in Sources */,
 				560B82131A5AE6BA00F4C430 /* AccountStudentController.m in Sources */,
 				561AAD381A0AC5C200269F18 /* NSObject+RMCopyable.m in Sources */,
 				561AAD3A1A0AC5C200269F18 /* RMMapper.m in Sources */,
+				5648CB8A1B177F0800BF86DC /* ClassCell.m in Sources */,
 				5666568619E874AF00FEA09E /* AFHTTPSessionManager.m in Sources */,
 				565A41C91A51C35C00F193D9 /* TWTMenuViewController.m in Sources */,
 				560C247D1A13F82900AAD013 /* Student.m in Sources */,
 				5666566F19E8740400FEA09E /* Account.m in Sources */,
 				5666568719E874AF00FEA09E /* AFNetworkReachabilityManager.m in Sources */,
+				5601FE431B0D324700628453 /* Session.m in Sources */,
 				5654C1C71AD2E519001EFDA9 /* ChargeViewController.m in Sources */,
 				560B82161A5AE71B00F4C430 /* StudentClassesController.m in Sources */,
 				561AAD371A0AC5C200269F18 /* NSObject+RMArchivable.m in Sources */,
 				560B821E1A6031C100F4C430 /* AccountTransactions.m in Sources */,
 				5666568419E874AF00FEA09E /* AFHTTPRequestOperation.m in Sources */,
 				5666568A19E874AF00FEA09E /* AFURLRequestSerialization.m in Sources */,
+				5648CB6F1B16118900BF86DC /* DownPicker.m in Sources */,
 				565A41C41A51C32700F193D9 /* TWTMenuViewController.h in Sources */,
 				565A41C71A51C35200F193D9 /* TWTMainViewController.m in Sources */,
 				565A41C51A51C34700F193D9 /* TWTSideMenuViewController.h in Sources */,
@@ -653,15 +802,19 @@
 				5666566819E8641800FEA09E /* JSONAPI.m in Sources */,
 				56EB74C319FED15A007C5E22 /* LoginController.m in Sources */,
 				560C24831A13FC1100AAD013 /* Classes.m in Sources */,
+				562F8E731B0A4A7F007BB7C5 /* EditStudentInformation.m in Sources */,
 				5642E1831A3F345100DA2597 /* StudentInformation.m in Sources */,
 				561AAD401A0D640B00269F18 /* School.m in Sources */,
 				5666566C19E8641800FEA09E /* JSONValueTransformer.m in Sources */,
 				5654C1C41AD2E507001EFDA9 /* PaymentViewController.m in Sources */,
 				560B822C1A64296F00F4C430 /* AccountTransactionsCell.m in Sources */,
 				5666568819E874AF00FEA09E /* AFSecurityPolicy.m in Sources */,
+				5648CB7A1B16283E00BF86DC /* StudentClasses.m in Sources */,
+				5648CB7E1B16662A00BF86DC /* EnrollStudentViewController.m in Sources */,
 				5666566919E8641800FEA09E /* JSONHTTPClient.m in Sources */,
 				5666568519E874AF00FEA09E /* AFHTTPRequestOperationManager.m in Sources */,
 				5666566319E8641800FEA09E /* JSONModel.m in Sources */,
+				5648CB701B16118900BF86DC /* UIDownPicker.m in Sources */,
 				5666568B19E874AF00FEA09E /* AFURLResponseSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +927,7 @@
 		};
 		5666562019E863A400FEA09E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F80FEAE03E4430823F958EE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -795,6 +949,7 @@
 		};
 		5666562119E863A400FEA09E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ECF5686C46C5E7943FF4333 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

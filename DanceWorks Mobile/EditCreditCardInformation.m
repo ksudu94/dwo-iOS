@@ -25,6 +25,7 @@
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
     [self registerForKeyboardNotifications];
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
 
     self.tfFname.text = _selectedAccount.CCFName;
     self.tfLame.text = _selectedAccount.CCLName;
@@ -269,20 +270,23 @@
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight ) {
+        CGSize origKeySize = kbSize;
+        kbSize.height = origKeySize.width;
+        kbSize.width = origKeySize.height;
+    }
     
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    self.editCreditCardScrollView.contentInset = contentInsets;
-    self.editCreditCardScrollView.scrollIndicatorInsets = contentInsets;
+    _editCreditCardScrollView.contentInset = contentInsets;
+    _editCreditCardScrollView.scrollIndicatorInsets = contentInsets;
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    //if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
-    //    [self.editAccountScrollView scrollRectToVisible:activeField.frame animated:YES];
-    //}
 }
 
 // Called when the UIKeyboardWillHideNotification is sent

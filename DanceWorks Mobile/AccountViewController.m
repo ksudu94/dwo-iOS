@@ -105,7 +105,7 @@
             [accountParams setObject:self.objUser.UserGUID forKey:@"UserGUID"];
             
             NSMutableString *accountMethod = [[NSMutableString alloc] init];
-            [accountMethod setString:@"getAccountsJS?"];
+            [accountMethod setString:@"getAccounts?"];
             
             NSURL *accountURL =  [NSURL URLWithString:[self.oGlobal buildURL:accountMethod fromDictionary:accountParams]];
             NSURLRequest *accountRequest = [NSURLRequest requestWithURL:accountURL];
@@ -130,7 +130,11 @@
             } failure:^(AFHTTPRequestOperation *accountOperation, NSError *error) {
                 
                 NSLog(@"Error: %@", error);
-                
+                NSInteger statusCode = accountOperation.response.statusCode;
+                NSLog(@"Error: %d", statusCode);
+                if (error.code == NSURLErrorTimedOut) {
+                    NSLog(@"Time out brah");
+                }
                 // 4
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Accounts"
                                                                     message:[error localizedDescription]
@@ -179,7 +183,11 @@
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 
                 NSLog(@"Error: %@", error);
-                
+                NSInteger statusCode = operation.response.statusCode;
+                NSLog(@"Error: %d", statusCode);
+                if (error.code == NSURLErrorTimedOut) {
+                    NSLog(@"Time out brah");
+                }
                 // 4
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error retrieving School, please try again later."
                                                                     message:[error localizedDescription]
@@ -203,7 +211,11 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
-        
+        NSInteger statusCode = operation.response.statusCode;
+        NSLog(@"Error: %d", statusCode);
+        if (error.code == NSURLErrorTimedOut) {
+            NSLog(@"Time out brah");
+        }
         // 4
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving User, please try again later."
                                                             message:[error localizedDescription]
@@ -314,49 +326,5 @@
     
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

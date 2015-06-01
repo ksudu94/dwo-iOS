@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PaymentViewController.h"
 
-@interface ModalCreditCard : UIViewController
+@interface ModalCreditCard : UIViewController <PaymentViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *creditCardView;
 @property (strong, nonatomic) IBOutlet UIButton *lbCancel;
@@ -18,9 +19,14 @@
 @property (strong, nonatomic) IBOutlet UITextField *tfCardNumber;
 @property (strong, nonatomic) IBOutlet UITextField *tfCVV;
 @property (strong, nonatomic) IBOutlet UITextField *tfExpireDate;
+@property (strong, nonatomic) IBOutlet UISwitch *rememberMe;
+
 
 @property(atomic, strong) NSString* CardNumber;
 @property(atomic, strong) NSString* CardCVV;
 @property(atomic, strong) NSString* CardDate;
+@property() BOOL saveNewCard;
+@property (nonatomic, strong) PaymentViewController *paymentController;
+
 
 @end

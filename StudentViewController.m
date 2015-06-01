@@ -20,15 +20,20 @@
 
 @implementation StudentViewController
 
+/**
+ * I'm putting this note here b/c I forgot how I did it the first time I did it. I did a segue from the cell in the StudentViewController in the IB to the tab bar controller. I then created a view controller equal to the first tab of that tab bar controller
+ * Which in this case is the student information tab. I Then gave it a selected student from the list of students. 
+ */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController popViewControllerAnimated:YES];
     
-    self.leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Open" style:UIBarButtonItemStylePlain target:self action:@selector(openButtonPressed)];
-    
-        
+    _leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Open" style:UIBarButtonItemStylePlain target:self action:@selector(openButtonPressed)];
+    _rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(LogOut:)];
+
+    self.navigationItem.rightBarButtonItem = self.rightBarButton;
     self.navigationItem.leftBarButtonItem = self.leftBarButton;
+
 
     
     //A delegate allows one object to send data to another when an event happens
@@ -54,8 +59,8 @@
     
     //AcctID of 0 means get all students
     [params setObject:[NSString stringWithFormat:@"%d", 0] forKey:@"AcctID"];
-    [params setObject:[NSString stringWithFormat:@"%d", self.School.SchID] forKey:@"SchID"];
-    [params setObject:[NSString stringWithFormat:@"%d", self.User.UserID]  forKey:@"UserID"];
+    [params setObject:[NSString stringWithFormat:@"%ld", (long)self.School.SchID] forKey:@"SchID"];
+    [params setObject:[NSString stringWithFormat:@"%ld", (long)self.User.UserID]  forKey:@"UserID"];
     [params setObject:self.User.UserGUID forKey:@"UserGUID"];
     
     NSMutableString *studentMethod = [[NSMutableString alloc] init];
@@ -76,7 +81,7 @@
         
         
         // 3
-        self.data = (NSDictionary *) responseObject;
+        _data = (NSDictionary *) responseObject;
         [self saveStudents];
         [self.tableView reloadData];
         [defaults rm_setCustomObject:responseObject forKey:@"SavedStudents"];
@@ -86,7 +91,12 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
-        
+        NSInteger statusCode = operation.response.statusCode;
+        NSLog(@"Error: %d", statusCode);
+        if (error.code == NSURLErrorTimedOut) {
+            NSLog(@"Time out brah");
+        }
+
         // 4
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Students"
                                                             message:[error localizedDescription]
@@ -101,20 +111,22 @@
     
 }
 
+/*
+ * Open navigation menu
+ */
+- (void)openButtonPressed
+{
+    [self.sideMenuViewController openMenuAnimated:YES completion:nil];
+}
+
+
 - (void) LogOut: (id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"UserID"];
     [defaults synchronize];
-    //[defaults setInteger:UserID forKey:@"UserID"];
-    [self performSegueWithIdentifier:@"LogoutSegue" sender:self];
-    
-    NSLog( @"Button clicked." );
-}
-
-- (void)openButtonPressed
-{
-    [self.sideMenuViewController openMenuAnimated:YES completion:nil];
+    UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginController"];
+    [[UIApplication sharedApplication].keyWindow setRootViewController:rootController];
 }
 
 
@@ -150,12 +162,15 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
-    StudentInformation *studentInformation = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"StudentInformation"];
-    studentInformation.selectedStudent = [self.studentsObjects objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:studentInformation animated:NO];
+    _studentTabBarController = (UITabBarController*) [segue destinationViewController];
+    NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+    _studentInformationController = [_studentTabBarController.viewControllers objectAtIndex: 0];
+    _studentInformationController.selectedStudent = [_studentsObjects objectAtIndex:selectedIndex.row];
+    _studentInformationController.User = _User;
+    _studentInformationController.School = _School;
+    
 }
 
 -(void) saveStudents {
@@ -182,50 +197,5 @@
     }
     
 }
-
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

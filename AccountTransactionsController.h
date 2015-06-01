@@ -24,9 +24,9 @@
 @property (nonatomic, strong) AccountTransactionsCell *selectedTransactionCell;
 
 @property (weak, nonatomic) IBOutlet UITableView *transactionTable;
-
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSMutableArray *transactionsObject;
-@property (nonatomic, strong) NSDictionary *data;
+@property (nonatomic, strong) NSDictionary *transactionsDictionary;
 
 @end
 

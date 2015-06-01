@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "School.h"
 
-@interface Globals : NSObject
+@interface Globals : NSObject <UITextFieldDelegate>
 
 
 - (NSDate*) getDateFromJSON:(NSString *)dateString;
@@ -18,4 +20,9 @@
 -(NSString *) URLEncodeString:(NSString *) str;
 
 - (NSString *) getTime;
+
+-(NSString *) textField:(UITextField*)textField formatAmountCharactersInRange:(NSRange)range replacementString:(NSString*)string;
+
+-(int) getCurrentSessionPosition: (NSMutableArray *) sessionArray forSchool:(School *)selectedSchool;
+
 @end

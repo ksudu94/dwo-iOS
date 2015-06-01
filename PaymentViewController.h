@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Globals.h"
 #import "Account.h"
+#import "User.h"
+#import "School.h"
 #import "AccountTransactions.h"
 
 @class PaymentViewController;
@@ -28,14 +30,41 @@
 @property (atomic, retain) NSArray *typeArray;
 @property (strong, nonatomic) IBOutlet UIScrollView *enterPaymentScrollView;
 
+@property (nonatomic, strong) NSArray *responseData;
+
+@property BOOL selectedACharge;
 @property (nonatomic, retain) Account *selectedAccount;
+@property (nonatomic, strong) User *User;
+@property (nonatomic, strong) School *School;
 @property (nonatomic, strong) Globals *oGlobals;
 @property (nonatomic, strong) AccountTransactions *selectedAccountTransaction;
 
+//These are used for formatting the amount textfield automatically
+@property (strong, nonatomic) NSString* decimalSeparator;
+@property (assign, nonatomic) int maximumFractionDigits;
 
-@property(atomic, strong) NSString* CardNumber;
-@property(atomic, strong) NSString* CardCVV;
+@property(atomic, strong) NSString* ModalCardNumber;
+@property(atomic, strong) NSString* ModalCardCVV;
+@property(atomic, strong) NSString* ModalCardExpire;
+
 @property(atomic, strong) NSString* CardDate;
+@property(atomic, strong) NSString* currentDate;
+@property(atomic, strong) NSString* paymentDescription;
+@property(atomic, strong) NSString* ChkNo;
+@property float amount;
+@property(atomic, strong) NSString* Kind;
+@property(atomic, strong) NSString* CCard;
+@property(atomic, strong) NSString* CCDate;
+@property int ConsentID;
+@property(atomic, strong) NSString* CCUser;
+@property(atomic, strong) NSString* CCPass;
+@property(atomic, strong) NSString* CardNumber;
+@property(atomic, strong) NSString* StrUsername;
+@property int CCMerch;
+@property float CCMaxAmount;
+@property(atomic, strong) NSString* CVV;
+@property BOOL saveCard;
+@property int ChgID;
 - (void) textFieldChanged:(UITextField *) textField;
 
 @end

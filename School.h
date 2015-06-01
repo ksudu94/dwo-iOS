@@ -68,10 +68,10 @@
 @property (assign, nonatomic) NSString *DiscountAcct;
 @property (assign, nonatomic) NSString *ST1Acct;
 @property (assign, nonatomic) NSString *ST1Desc;
-@property (assign, nonatomic) NSString *ST1Rate;
+@property (copy, nonatomic) NSString *ST1Rate;
 @property (assign, nonatomic) NSString *ST2Acct;
 @property (assign, nonatomic) NSString *ST2Desc;
-@property (assign, nonatomic) NSString *ST2Rate;
+@property (copy, nonatomic) NSString *ST2Rate;
 @property () NSDate *BackupDate;
 @property (assign, nonatomic) NSString *BackupPath;
 @property (assign, nonatomic) NSString *StatementNote;

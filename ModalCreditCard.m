@@ -7,6 +7,7 @@
 //
 
 #import "ModalCreditCard.h"
+#import "PaymentViewController.h"
 
 @interface ModalCreditCard ()
 
@@ -16,16 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
     
 }
 - (IBAction)cancelNewCard:(id)sender
 {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)saveNewCard:(id)sender
 {
-    
+
     NSError *error = nil;
     if([self.tfCardNumber.text isEqualToString:@""] || [self.tfCVV.text isEqualToString:@""]|| [self.tfExpireDate .text isEqualToString:@""])
     {
@@ -137,9 +139,14 @@
     
     if(validDate)
     {
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
-
+        _paymentController.CardNumber = _CardNumber;
+        _paymentController.CardDate = _CardDate;
+        _paymentController.CVV = _CardCVV;
+        _paymentController.delegate = self;
+        _saveNewCard = [_rememberMe isOn];
+        if(_saveNewCard)
+            _paymentController.saveCard = true;
+        [[self navigationController] pushViewController:_paymentController animated:YES];
     }
 
 

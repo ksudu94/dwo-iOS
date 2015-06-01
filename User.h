@@ -14,12 +14,13 @@
     
 @property (assign, nonatomic) NSInteger SchID;
 @property (assign, nonatomic) NSInteger UserID;
+@property (copy, nonatomic) NSString *UserGUID;
 @property (assign, nonatomic) NSString *UserName;
 @property (assign, nonatomic) NSString *EMailAddr;
 @property (assign, nonatomic) BOOL Admin;
 @property (assign, nonatomic) NSString *Access;
 @property (assign, nonatomic) BOOL ProcReg;
-@property (assign, nonatomic) NSString *DisplayName;
+@property (copy, nonatomic) NSString *DisplayName;
 @property (assign, nonatomic) BOOL TransTypeOptions;
 @property (assign, nonatomic) NSInteger TransType;
 @property (assign, nonatomic) NSInteger TransPaymentKind;
@@ -51,7 +52,6 @@
 @property (assign, nonatomic) NSInteger StudentListSize;
 @property (assign, nonatomic) NSInteger ClassListSize;
 @property (assign, nonatomic) NSInteger StaffListSize;
-@property (assign, nonatomic) NSString *UserGUID;
 @property (assign, nonatomic) NSInteger StaffID;
 
 @end
